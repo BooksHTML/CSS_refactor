@@ -1,0 +1,7 @@
+Create the sample article here in the usual way
+
+xsltproc  ~/Publishing/MBX/mathbook/xsl/mathbook-html.xsl ~/Publishing/MBX/mathbook/examples/sample-article/sample-article.xml
+
+Then do this in the LaTeXtoLaTeX directory
+
+./ltol.py html ../Samples/sample-article-raw ../Samples/sample-article
