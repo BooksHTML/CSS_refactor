@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2017-11-30T08:53:08-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SA Pre-Formatted Text</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/javascript" src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script><script>(function() {
+  var cx = '008832104071767086392:j6aknlqevbm';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.6/jsxgraph.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.6/jsxgraphcore.js"></script><link href="../../css/refactor-3.css" rel="stylesheet" type="text/css">
+<link href="../../css/refactor-add-on.css" rel="stylesheet" type="text/css">
+                     <link href="../../css/new_a.css" rel="stylesheet" type="text/css">
+                     <link href="../../css/new_b.css" rel="stylesheet" type="text/css">
+                     <link href="../../css/new_c.css" rel="stylesheet" type="text/css">
+                     <link href="../../css/new_d.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="http://pythontutor.com/build/pytutor-embed.bundle.js?cc25af72af" charset="utf-8"></script>
+</head>
+<body class="mathbook-article has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<div class="searchwrapper"><div class="gcse-search"></div></div>
+<a id="logo-link" href="http://mathbook.pugetsound.edu" target="_blank"><img src="images/book-cover-google-art-project.jpg" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="derivatives.html"><span class="title">Derivatives and Integrals</span><span class="subtitle">An Annotated Discourse</span></a></h1>
+<p class="byline">Robert Beezer</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-internationalization.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="derivatives.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-programs.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-internationalization.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="derivatives.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-programs.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="index.html" data-scroll="index"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="section-1.html" data-scroll="section-1"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<h2 class="link"><a href="section-fundamental-theorem.html" data-scroll="section-fundamental-theorem"><span class="codenumber">2</span><span class="title">The Fundamental Theorem</span></a></h2>
+<h2 class="link"><a href="section-sage-cells.html" data-scroll="section-sage-cells"><span class="codenumber">3</span><span class="title">Computing Integrals with Sage (\(\int\))</span></a></h2>
+<h2 class="link"><a href="interesting-corollary.html" data-scroll="interesting-corollary"><span class="codenumber">4</span><span class="title">An Interesting Corollary</span></a></h2>
+<h2 class="link"><a href="section-5.html" data-scroll="section-5"><span class="codenumber">5</span><span class="title">Some Facts and Figures</span></a></h2>
+<h2 class="link"><a href="section-6.html" data-scroll="section-6"><span class="codenumber">6</span><span class="title">Some Advanced Ideas</span></a></h2>
+<h2 class="link"><a href="section-7.html" data-scroll="section-7"><span class="codenumber">7</span><span class="title">Mathematics</span></a></h2>
+<h2 class="link"><a href="section-8.html" data-scroll="section-8"><span class="codenumber">8</span><span class="title">Special, Reserved, and Escape Characters</span></a></h2>
+<h2 class="link"><a href="graphics.html" data-scroll="graphics"><span class="codenumber">9</span><span class="title">Graphics</span></a></h2>
+<h2 class="link"><a href="section-10.html" data-scroll="section-10"><span class="codenumber">10</span><span class="title">Demonstrations</span></a></h2>
+<h2 class="link"><a href="section-11.html" data-scroll="section-11"><span class="codenumber">11</span><span class="title">Further Reading</span></a></h2>
+<h2 class="link"><a href="section-12.html" data-scroll="section-12"><span class="codenumber">12</span><span class="title">List Calisthenics</span></a></h2>
+<h2 class="link"><a href="section-13.html" data-scroll="section-13"><span class="codenumber">13</span><span class="title">Table Calisthenics</span></a></h2>
+<h2 class="link"><a href="section-14.html" data-scroll="section-14"><span class="codenumber">14</span><span class="title">Embedded Interactive Elements</span></a></h2>
+<h2 class="link"><a href="section-video.html" data-scroll="section-video"><span class="codenumber">15</span><span class="title">Video</span></a></h2>
+<h2 class="link"><a href="exercises.html" data-scroll="exercises"><span class="codenumber">16</span><span class="title">Exercises</span></a></h2>
+<h2 class="link"><a href="section-cross-referencing.html" data-scroll="section-cross-referencing"><span class="codenumber">17</span><span class="title">Cross-Referencing</span></a></h2>
+<h2 class="link"><a href="section-internationalization.html" data-scroll="section-internationalization"><span class="codenumber">18</span><span class="title">Internationalization</span></a></h2>
+<h2 class="link active"><a href="section-18.html" data-scroll="section-18"><span class="codenumber">19</span><span class="title">Pre-Formatted Text</span></a></h2>
+<h2 class="link"><a href="section-programs.html" data-scroll="section-programs"><span class="codenumber">20</span><span class="title">Program Listings</span></a></h2>
+<h2 class="link"><a href="section-20.html" data-scroll="section-20"><span class="codenumber">21</span><span class="title">Units of Measure</span></a></h2>
+<h2 class="link"><a href="section-side-by-side.html" data-scroll="section-side-by-side"><span class="codenumber">22</span><span class="title">Side-By-Side Panels</span></a></h2>
+<h2 class="link"><a href="section-22.html" data-scroll="section-22"><span class="codenumber">23</span><span class="title">Side-by-Side Gallery</span></a></h2>
+<h2 class="link"><a href="poetry.html" data-scroll="poetry"><span class="codenumber">24</span><span class="title">Poetry</span></a></h2>
+<h2 class="link"><a href="advanced-numbering.html" data-scroll="advanced-numbering"><span class="codenumber">25</span><span class="title">Advanced Numbering</span></a></h2>
+<h2 class="link"><a href="section-25.html" data-scroll="section-25"><span class="codenumber">26</span><span class="title">Customizations</span></a></h2>
+<h2 class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Reference</span></a></h2></nav><div class="extras"><nav><a class="feedback-link" href="not-implemented.html" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-18"><header title="Section 19 Pre-Formatted Text"><h2 class="heading hide-type" alt="Section 19 Pre-Formatted Text">
+<span class="type">Section</span><span class="codenumber">19</span><span class="title">Pre-Formatted Text</span>
+</h2></header><p id="p-610">In Sage, if you wanted to build a matrix, then you would use the <tt class="code-inline tex2jax_ignore">matrix()</tt> constructor.  Here is the matrix of second partials of \(f(x,y)=x^3+8x^2y^3 + y^4\text{,}\) as you would enter it in Sage.  Notice that <tt class="code-inline tex2jax_ignore">SR</tt> is the ring of symbolic expressions, <tt class="code-inline tex2jax_ignore">Symbolic Ring</tt>.</p>
+<pre class="code-block tex2jax_ignore">var('x', 'y')
+J = matrix(SR, [
+    [6*x + 16*y^3, 48*x*y^2],
+    [48*x*y^2, 48*x^2*y + 12*y^2]
+    ])
+</pre>
+<p id="p-611">That accomplished, Sage will easily and naturally provide a <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> representation of the matrix with the command <tt class="code-inline tex2jax_ignore">latex(J)</tt>.</p>
+<pre class="code-block tex2jax_ignore">\left(\begin{array}{rr}
+16 \, y^{3} + 6 \, x &amp; -48 \, x y^{2} \\
+48 \, x y^{2} &amp; 48 \, x^{2} y + 12 \, y^{2}
+\end{array}\right)
+</pre>
+<p id="p-612">The realization of preformatted text should be robust enough that it can be cut from documents and pasted without any substitutions of “fancier” Unicode characters for generic ASCII characters.  Try the “minus” sign on the \(48\) above to see if it does not become a dash, or the single quotes on the Sage variables.</p>
+<p id="p-613">For Sage input code, the first non-whitespace character sets the left margin, since legitimate Python code has no subsequent lines outdented.  For pre-formatted code, the line with the <em class="emphasis">least</em> whitespace leading the line will determine the left margin.  If preserving indentation is important, do not mix spaces and tabs.  For syntax highlighting of text representing computer programs, or parts of them, see Section <a href="section-programs.html" alt="Section 20 Program Listings" title="Section 20 Program Listings">20</a>.  Examine the source of the following example to help understand this paragraph.</p>
+<pre class="code-block tex2jax_ignore">        A normal line
+                An indented line
+An outdented line
+</pre>
+<p id="p-614">The <tt class="code-inline tex2jax_ignore">&lt;c&gt;</tt> element, for inline code snippets (or anything else in a monospace font) uses the question-mark character to tell <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> where the text begins and ends.  This will be a problem if the text has a question mark in it!  So there is the attribute <tt class="code-inline tex2jax_ignore">latexsep</tt> that allows you to specify another character that does not appear in your text.  For example, XML directives use question-marks now and then, so writing about them in PreTeXt requires specifying a different separation character, as in:  <tt class="code-inline tex2jax_ignore">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</tt>.  The <tt class="code-inline tex2jax_ignore">&lt;pre&gt;</tt> element does not suffer from this quirk.</p>
+<p id="p-615">Snippets should also be robust for cut/paste operations.  For example, you should not get “curly” “smart” quote marks in verbatim text: <tt class="code-inline tex2jax_ignore">this should have "dumb" quote marks</tt>. Here are a few characters that should migrate through <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> to a PDF unmolested:  <tt class="code-inline tex2jax_ignore">'"----"'</tt></p>
+<p id="p-616"><tt class="code-inline tex2jax_ignore">If you write a very long snippet of inline code it can impinge on the right margin, especially if it were to begin close to that margin.  For output in LaTeX we allow line-breaking, but we do not get hyphenation and the font is fixed-width.  So not always perfect.  Consider a display (program listing as above with the pre element) or maybe reorganizing a sentence.  And it looks like a space after that left parenthesis just got ignored in the PDF created from the latex output.</tt></p>
+<p id="p-617">An intermediate type of verbatim text can be accomplished with the <tt class="code-inline tex2jax_ignore">&lt;cd&gt;</tt> tag, short for “code display.”  It allows for larger chunks of verbatim text to show up in the middle of a paragraph, but with some vertical space above and below.  It can be</p>
+<pre class="code-block tex2jax_ignore">authored as a single line</pre>
+<p>or if you wish to have multiple lines</p>
+<pre class="code-block tex2jax_ignore">there is the cline tag
+meant to model the line tag
+and short for "code line"
+</pre>
+<p>and you may even</p>
+<pre class="code-block tex2jax_ignore">use a single cline
+</pre>
+<p>if you like to have your source closely model the visual look of the output.</p>
+<p id="p-618">The <tt class="code-inline tex2jax_ignore">&lt;pre&gt;</tt> tag is meant for use outside of paragraphs, but is otherwise very similar.  The source may also be structured as a sequence of <tt class="code-inline tex2jax_ignore">&lt;cline&gt;</tt> as in the next example, recycling content from above.</p>
+<pre class="code-block tex2jax_ignore">If you write a very long snippet of inline 
+code it can impinge on the right margin,
+especially if it were to begin close to that
+margin.  For output in LaTeX we allow line-breaking,
+but we do not get hyphenation and the font is
+fixed-width.  So not always perfect.  Consider a
+display (program listing as above with the pre element)
+or maybe reorganizing a sentence.
+</pre></section></div></main>
+</div>
+<script type="text/javascript">createAllVisualizersFromHtmlAttrs();</script>
+</body>
+</html>
