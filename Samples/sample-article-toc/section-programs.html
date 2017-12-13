@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2017-12-13T12:11:08-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SA Program Listings</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/javascript" src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script><script>(function() {
+  var cx = '008832104071767086392:j6aknlqevbm';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.6/jsxgraph.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.6/jsxgraphcore.js"></script><link href="../../css/refactor-3.css" rel="stylesheet" type="text/css">
+<link href="../../css/refactor-add-on.css" rel="stylesheet" type="text/css">
+                     <link href="../../css/new_a.css" rel="stylesheet" type="text/css">
+                     <link href="../../css/new_b.css" rel="stylesheet" type="text/css">
+                     <link href="../../css/new_c.css" rel="stylesheet" type="text/css">
+                     <link href="../../css/new_d.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="http://pythontutor.com/build/pytutor-embed.bundle.js?cc25af72af" charset="utf-8"></script>
+</head>
+<body class="mathbook-article has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<div class="searchwrapper"><div class="gcse-search"></div></div>
+<a id="logo-link" href="http://mathbook.pugetsound.edu" target="_blank"><img src="images/book-cover-google-art-project.jpg" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="derivatives.html"><span class="title">Derivatives and Integrals</span><span class="subtitle">An Annotated Discourse</span></a></h1>
+<p class="byline">Robert Beezer</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-18.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="derivatives.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-20.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-18.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="derivatives.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-20.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc">
+<ul><li><a href="index.html" data-scroll="index"><span class="title">Front Matter</span></a></li>
+<li><a href="section-1.html" data-scroll="section-1"><span class="codenumber">1</span><span class="title">Introduction</span></a></li>
+<li><a href="section-fundamental-theorem.html" data-scroll="section-fundamental-theorem"><span class="codenumber">2</span><span class="title">The Fundamental Theorem</span></a></li>
+<li><a href="section-sage-cells.html" data-scroll="section-sage-cells"><span class="codenumber">3</span><span class="title">Computing Integrals with Sage (\(\int\))</span></a></li>
+<li><a href="interesting-corollary.html" data-scroll="interesting-corollary"><span class="codenumber">4</span><span class="title">An Interesting Corollary</span></a>
+<ul>
+<li><a href="interesting-corollary.html#subsection-1" data-scroll="subsection-1">Second Version of <abbr class="acronym">FTC</abbr></a></li>
+<li><a href="interesting-corollary.html#subsection-2" data-scroll="subsection-2">A Pedagogical Note</a></li>
+<li><a href="interesting-corollary.html#subsection-3" data-scroll="subsection-3">Theorem-Like Environments</a></li>
+<li><a href="interesting-corollary.html#subsection-4" data-scroll="subsection-4">Linking Sage Cells</a></li>
+<li><a href="interesting-corollary.html#subsection-5" data-scroll="subsection-5">Hierarchy</a></li>
+<li><a href="interesting-corollary.html#subsection-intro-conclude" data-scroll="subsection-intro-conclude">Introductions and Conclusions</a></li>
+<li><a href="interesting-corollary.html#subsection-paragraph-markup" data-scroll="subsection-paragraph-markup">Some Paragraph-Level Markup</a></li>
+</ul>
+</li>
+<li><a href="section-5.html" data-scroll="section-5"><span class="codenumber">5</span><span class="title">Some Facts and Figures</span></a></li>
+<li><a href="section-6.html" data-scroll="section-6"><span class="codenumber">6</span><span class="title">Some Advanced Ideas</span></a></li>
+<li><a href="section-7.html" data-scroll="section-7"><span class="codenumber">7</span><span class="title">Mathematics</span></a>
+<ul>
+<li><a href="section-7.html#subsection-8" data-scroll="subsection-8">Basic Mathematics</a></li>
+<li><a href="section-7.html#subsection-9" data-scroll="subsection-9">Displayed Mathematics</a></li>
+<li><a href="section-7.html#subsection-10" data-scroll="subsection-10"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> Packages and MathJax Extensions</a></li>
+<li><a href="section-7.html#subsection-11" data-scroll="subsection-11">Advanced Mathematics</a></li>
+<li><a href="section-7.html#subsection-12" data-scroll="subsection-12">Local Tags on Equations</a></li>
+</ul>
+</li>
+<li><a href="section-8.html" data-scroll="section-8"><span class="codenumber">8</span><span class="title">Special, Reserved, and Escape Characters</span></a>
+<ul>
+<li><a href="section-8.html#subsection-reserved-characters" data-scroll="subsection-reserved-characters">Reserved Characters</a></li>
+<li><a href="section-8.html#subsection-14" data-scroll="subsection-14">Pseudo-Characters and Constructions</a></li>
+<li><a href="section-8.html#section-urls" data-scroll="section-urls">URLs</a></li>
+<li><a href="section-8.html#subsection-16" data-scroll="subsection-16">Quotations</a></li>
+<li><a href="section-8.html#subsection-17" data-scroll="subsection-17">Groupings</a></li>
+<li><a href="section-8.html#subsection-18" data-scroll="subsection-18">Biological Names</a></li>
+<li><a href="section-8.html#subsection-19" data-scroll="subsection-19">Verbatim in titles, <tt class="code-inline tex2jax_ignore">\a&amp;b#c%d~e{f}g$h_i^j</tt>, OK</a></li>
+</ul>
+</li>
+<li><a href="graphics.html" data-scroll="graphics"><span class="codenumber">9</span><span class="title">Graphics</span></a>
+<ul>
+<li><a href="graphics.html#subsection-20" data-scroll="subsection-20"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> images</a></li>
+<li><a href="graphics.html#subsection-21" data-scroll="subsection-21">Placing Images without a Caption</a></li>
+<li><a href="graphics.html#subsection-22" data-scroll="subsection-22">Asymptote</a></li>
+<li><a href="graphics.html#subsection-23" data-scroll="subsection-23">Sage Plots</a></li>
+<li><a href="graphics.html#subsection-24" data-scroll="subsection-24">Images from External Sources</a></li>
+<li><a href="graphics.html#subsection-25" data-scroll="subsection-25">Copies of Images</a></li>
+<li><a href="graphics.html#subsection-26" data-scroll="subsection-26">Technical Details</a></li>
+<li><a href="graphics.html#subsection-27" data-scroll="subsection-27">Caption Testing</a></li>
+</ul>
+</li>
+<li><a href="section-10.html" data-scroll="section-10"><span class="codenumber">10</span><span class="title">Demonstrations</span></a></li>
+<li><a href="section-11.html" data-scroll="section-11"><span class="codenumber">11</span><span class="title">Further Reading</span></a>
+<ul>
+<li><a href="section-11.html#subsection-28" data-scroll="subsection-28">Specialized Subdivisions</a></li>
+<li><a href="section-11.html#references-1" data-scroll="references-1">References</a></li>
+<li><a href="section-11.html#exercises-2" data-scroll="exercises-2">Exercises</a></li>
+<li><a href="section-11.html#exercises-3" data-scroll="exercises-3">More Exercises</a></li>
+</ul>
+</li>
+<li><a href="section-12.html" data-scroll="section-12"><span class="codenumber">12</span><span class="title">List Calisthenics</span></a>
+<ul>
+<li><a href="section-12.html#subsection-29" data-scroll="subsection-29">Lists, Generally</a></li>
+<li><a href="section-12.html#subsection-30" data-scroll="subsection-30">List Spacing, I</a></li>
+<li><a href="section-12.html#subsection-31" data-scroll="subsection-31">List Spacing, II</a></li>
+<li><a href="section-12.html#exercises-4" data-scroll="exercises-4">Exercises (with lists)</a></li>
+<li><a href="section-12.html#subsection-32" data-scroll="subsection-32">Description Lists</a></li>
+<li><a href="section-12.html#subsection-33" data-scroll="subsection-33">Named Lists</a></li>
+<li><a href="section-12.html#subsection-34" data-scroll="subsection-34">Testing List Decompositions</a></li>
+<li><a href="section-12.html#references-2" data-scroll="references-2">References (with lists in Annotations)</a></li>
+</ul>
+</li>
+<li><a href="section-13.html" data-scroll="section-13"><span class="codenumber">13</span><span class="title">Table Calisthenics</span></a></li>
+<li><a href="section-14.html" data-scroll="section-14"><span class="codenumber">14</span><span class="title">Embedded Interactive Elements</span></a>
+<ul>
+<li><a href="section-14.html#subsection-35" data-scroll="subsection-35">GeoGebra</a></li>
+<li><a href="section-14.html#subsection-36" data-scroll="subsection-36">JSXGraph</a></li>
+</ul>
+</li>
+<li><a href="section-video.html" data-scroll="section-video"><span class="codenumber">15</span><span class="title">Video</span></a></li>
+<li><a href="exercises.html" data-scroll="exercises"><span class="codenumber">16</span><span class="title">Exercises</span></a></li>
+<li><a href="section-cross-referencing.html" data-scroll="section-cross-referencing"><span class="codenumber">17</span><span class="title">Cross-Referencing</span></a></li>
+<li><a href="section-internationalization.html" data-scroll="section-internationalization"><span class="codenumber">18</span><span class="title">Internationalization</span></a></li>
+<li><a href="section-18.html" data-scroll="section-18"><span class="codenumber">19</span><span class="title">Pre-Formatted Text</span></a></li>
+<li class="active"><a href="section-programs.html" data-scroll="section-programs"><span class="codenumber">20</span><span class="title">Program Listings</span></a></li>
+<li><a href="section-20.html" data-scroll="section-20"><span class="codenumber">21</span><span class="title">Units of Measure</span></a></li>
+<li><a href="section-side-by-side.html" data-scroll="section-side-by-side"><span class="codenumber">22</span><span class="title">Side-By-Side Panels</span></a>
+<ul>
+<li><a href="section-side-by-side.html#subsection-37" data-scroll="subsection-37">Figures with Numbers Side-By-Side</a></li>
+<li><a href="section-side-by-side.html#subsection-38" data-scroll="subsection-38">Images</a></li>
+<li><a href="section-side-by-side.html#subsection-39" data-scroll="subsection-39">Common Side-By-Side Constructions</a></li>
+<li><a href="section-side-by-side.html#subsection-40" data-scroll="subsection-40">A Single Captionless Image</a></li>
+<li><a href="section-side-by-side.html#subsection-41" data-scroll="subsection-41">Vertical Alignment</a></li>
+<li><a href="section-side-by-side.html#subsection-42" data-scroll="subsection-42">Text Next to Text and Images</a></li>
+<li><a href="section-side-by-side.html#subsection-43" data-scroll="subsection-43">Image Formats, Side-by-Sides</a></li>
+<li><a href="section-side-by-side.html#subsection-44" data-scroll="subsection-44">Tables Side-By-Side</a></li>
+<li><a href="section-side-by-side.html#subsection-45" data-scroll="subsection-45">Tables Next to Figures</a></li>
+<li><a href="section-side-by-side.html#subsection-46" data-scroll="subsection-46">Tables Next to Text</a></li>
+<li><a href="section-side-by-side.html#subsection-47" data-scroll="subsection-47">Tabular Next to Each Other</a></li>
+<li><a href="section-side-by-side.html#subsection-48" data-scroll="subsection-48">Lists in Side-by-Sides</a></li>
+<li><a href="section-side-by-side.html#subsection-sbs-other-panels" data-scroll="subsection-sbs-other-panels">Other Panels</a></li>
+<li><a href="section-side-by-side.html#subsection-50" data-scroll="subsection-50">Poems as Side-By-Side Panels</a></li>
+<li><a href="section-side-by-side.html#subsection-sbsgroup" data-scroll="subsection-sbsgroup">Side-By-Side Groups</a></li>
+<li><a href="section-side-by-side.html#subsection-52" data-scroll="subsection-52">Testing Styling of Related Elements</a></li>
+</ul>
+</li>
+<li><a href="section-22.html" data-scroll="section-22"><span class="codenumber">23</span><span class="title">Side-by-Side Gallery</span></a></li>
+<li><a href="poetry.html" data-scroll="poetry"><span class="codenumber">24</span><span class="title">Poetry</span></a></li>
+<li><a href="advanced-numbering.html" data-scroll="advanced-numbering"><span class="codenumber">25</span><span class="title">Advanced Numbering</span></a>
+<ul>
+<li><a href="advanced-numbering.html#subsection-53" data-scroll="subsection-53">One</a></li>
+<li><a href="advanced-numbering.html#subsection-54" data-scroll="subsection-54">Two</a></li>
+<li><a href="advanced-numbering.html#subsection-55" data-scroll="subsection-55">Three</a></li>
+<li><a href="advanced-numbering.html#subsection-56" data-scroll="subsection-56">Four</a></li>
+<li><a href="advanced-numbering.html#subsection-57" data-scroll="subsection-57">Five</a></li>
+<li><a href="advanced-numbering.html#subsection-local-theorems" data-scroll="subsection-local-theorems">Theorems in This Section</a></li>
+<li><a href="advanced-numbering.html#subsection-59" data-scroll="subsection-59">A Title with ] a Right Bracket</a></li>
+</ul>
+</li>
+<li><a href="section-25.html" data-scroll="section-25"><span class="codenumber">26</span><span class="title">Customizations</span></a>
+<ul><li><a href="section-25.html#rename-facility" data-scroll="rename-facility">Renaming Document Parts</a></li></ul>
+</li>
+<li><a href="backmatter.html" data-scroll="backmatter"><span class="title">Reference</span></a>
+<ul>
+<li><a href="appendix-1.html" data-scroll="appendix-1">Notation</a></li>
+<li><a href="appendix-2.html" data-scroll="appendix-2">Solutions to Selected Exercises</a></li>
+<li><a href="appendix-results.html" data-scroll="appendix-results">List of Results</a></li>
+<li><a href="appendix-4.html" data-scroll="appendix-4">Index</a></li>
+<li><a href="references-3.html" data-scroll="references-3">References</a></li>
+<li><a href="index-1.html" data-scroll="index-1">Index</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+</ul>
+</li></ul>
+</nav><div class="extras"><nav><a class="feedback-link" href="not-implemented.html" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-programs"><header title="Section 20 Program Listings"><h2 class="heading hide-type" alt="Section 20 Program Listings">
+<span class="type">Section</span><span class="codenumber">20</span><span class="title">Program Listings</span>
+</h2>
+<a href="section-programs.html" class="permalink">¶</a></header><p id="p-622">Sage cells can be used for Python examples, but Sage uses a mild amount of pre-parsing, so that might not be a wise decision, especially in instructional settings.  We might implement Skulpt or Brython (in-browser Python) or the Python language argument to the Sage Cell Server.  To see examples of authoring Sage cells, have a look at Section <a href="section-sage-cells.html" alt="Section 3 Computing Integrals with Sage (\(\int\))" title="Section 3 Computing Integrals with Sage (\(\int\))">3</a>.</p>
+<p id="p-623">In the meantime, program listings, especially with syntax highlighting, is useful all by itself.  The “R” language might not be a bad stand-in for pseudo-code, as it supports assignment with a left arrow and has fairly generic procedural syntax for control structures and data structures.  Or maybe Pascal would be a good choice?  Here is an example of R.  Note in the source that the entire block of code is wrapped in a CDATA section due to the four left angle brackets.  We do not recommend this technique for isolated problem characters, but it is a life-saver for situations like the <abbr class="initialism">XSLT</abbr> code just following.</p>
+<div class="sidebyside" id="sidebyside-19"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><pre class="prettyprint lang-r" style="font-size:80%">n_loops &lt;- 10
+x.means &lt;- numeric(n_loops)  # create a vector of zeros for results
+for (i in 1:n_loops){
+    x &lt;- as.integer(runif(100, 1, 7))  # 1 to 6, uniformly
+    x.means[i] &lt;- mean(x)
+}
+x.means
+</pre></div></div></div>
+<p id="p-624">And some self-referential XSL:</p>
+<div class="sidebyside" id="sidebyside-20"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><pre class="prettyprint lang-xslt" style="font-size:80%">&lt;xsl:template match="biblio" mode="number"&gt;
+    &lt;xsl:apply-templates select="." mode="structural-number" /&gt;
+    &lt;xsl:text&gt;.&lt;/xsl:text&gt;
+    &lt;xsl:number from="references" level="any" count="biblio" /&gt;
+&lt;/xsl:template&gt;
+</pre></div></div></div>
+<p id="p-625">You can write made-up pseudo-code and get reasonable syntax highlighting, but you might explain to a reader what your symbols all mean.  This routine takes the \(m\times n\) marix \(A\) to reduced row-echelon form.  Note in the source the use of escaped characters for the four angle brackets.</p>
+<div class="sidebyside" id="sidebyside-21"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><pre class="prettyprint" style="font-size:80%">input m, n and A
+r := 0
+for j := 1 to n
+   i := r+1
+   while i &lt;= m and A[i,j] == 0
+       i := i+1
+   if i &lt; m+1
+       r := r+1
+       swap rows i and r of A (row op 1)
+       scale A[r,j] to a leading 1 (row op 2)
+       for k := 1 to m, k &lt;&gt; r
+           make A[k,j] zero (row op 3, employing row r)
+output r and A
+</pre></div></div></div>
+<p id="p-626">Look in the <tt class="code-inline tex2jax_ignore">mathbook-common.xsl</tt> file to see the strings to use to identify languages.  Always all-lowercase, no symbols, no punctuation.</p>
+<p id="p-627">Note that the above examples all have slightly different widths (theser are very evident in print with the frames).  As 2-D atomic objects, to place them in the narrative requires the layout features of a <tt class="code-inline tex2jax_ignore">sidebyside</tt> element.  Then <tt class="code-inline tex2jax_ignore">width</tt> and/or <tt class="code-inline tex2jax_ignore">margin</tt> attributes will influence the width of the panel.</p>
+<p id="p-628">A <tt class="code-inline tex2jax_ignore">program</tt> may also be nested inside a <tt class="code-inline tex2jax_ignore">listing</tt>, which behaves similar to a <tt class="code-inline tex2jax_ignore">figure</tt>.  You can provide a <tt class="code-inline tex2jax_ignore">caption</tt>, and the listing will be numbered along with tables and figures.  This then makes it possible to cross-reference the listing, such as <a knowl="./knowl/listing-c-hello.html" knowl-id="xref-listing-c-hello" alt="Listing 20.1 " title="Listing 20.1 ">Listing 20.1</a>.  It also removes the requirement of wrapping the <tt class="code-inline tex2jax_ignore">program</tt> in a <tt class="code-inline tex2jax_ignore">sidebyside</tt>.  For technical reasons, the three examples above will not split across a page break in PDF output, but the placement inside a <tt class="code-inline tex2jax_ignore">listing</tt> will allow splits, as you should see in at least one example following.</p>
+<figure class="figure-like" id="listing-c-hello"><pre class="prettyprint lang-c" style="font-size:80%">/* Hello World program */
+
+#include&lt;stdio.h&gt;
+
+main()
+{
+    printf("Hello, World!");
+}
+</pre>
+<figcaption><span class="heading">Listing</span><span class="codenumber">20.1</span>C Version of “Hello, World!”</figcaption></figure><p id="p-629">If you are discussing algorithms in the abstract (or even concretely), you can set them off like a theorem, with a number, a title and a target for cross-references.  Sometimes you claim an algorithm produces something in particular, or has certain properties, such as a theoretical run time, so a proof may be included.  See the discussion just preceding about (limited) options for pseudo-code.</p>
+<article class="theorem-like" id="algorithm-sieve-eratosthenes"><h6 class="heading">
+<span class="type">Algorithm</span><span class="codenumber">20.2</span><span class="title">Sieve of Eratosthenes</span>
+</h6>
+<p id="p-630">On input of a positive integer <tt class="code-inline tex2jax_ignore">n</tt> this algorithm will compute all the prime numbers up to, and including, <tt class="code-inline tex2jax_ignore">n</tt>.  It was named for Eratosthenes of Cyrene (c. 276 BC–c. 195/194 BC) by Nicomachus (c. 60–c. 120 CE) in <span class="booktitle">Introduction to Arithmetic</span>. (<a class="external-url" href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes" target="_blank">Wikipedia</a>, 2015)</p>
+<ol id="ol-30" style="list-style-type: decimal;">
+<li id="li-225">Input: <tt class="code-inline tex2jax_ignore">n</tt>
+</li>
+<li id="li-226">Form the list of all integers from <tt class="code-inline tex2jax_ignore">2</tt> to <tt class="code-inline tex2jax_ignore">n</tt>
+</li>
+<li id="li-227">Set <tt class="code-inline tex2jax_ignore">p = 2</tt>
+</li>
+<li id="li-228">
+<p id="p-631">While <tt class="code-inline tex2jax_ignore">p &lt; sqrt(n)</tt></p>
+<ol id="ol-31" style="list-style-type: decimal;">
+<li id="li-229">If present, remove from the list multiples <tt class="code-inline tex2jax_ignore">2p, 3p, ...</tt>
+</li>
+<li id="li-230">If <tt class="code-inline tex2jax_ignore">p</tt> is now the last element of the list, stop</li>
+<li id="li-231">Otherwise, set <tt class="code-inline tex2jax_ignore">p</tt> to the element of the list immediately after current <tt class="code-inline tex2jax_ignore">p</tt>
+</li>
+</ol>
+</li>
+<li id="li-232">Output: the remaining elements of the list</li>
+</ol></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-5" id="proof-5"><article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6></article></a></div>
+<div id="hk-proof-5" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-632">Any element removed is a non-trivial product of two integers and hence composite.  So no prime is is ever removed from the list.</p>
+<p id="p-633">Each composite number is a multiple of some prime, and since no prime is ever removed, each composite will be removed.  Hence the removed elements are precisely the set of composite numbers in the list and thus the remainder are precisely the primes on the list.</p></article></div>
+<p id="p-634">If you are writing about system-level software, you may need to write numbers in hexadecimal or binary.  Here we use a numbered, displayed equation (mathematics) and <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> macros such as <tt class="code-inline tex2jax_ignore">\texttt</tt> for a monospace text font, and <tt class="code-inline tex2jax_ignore">\;</tt> for spacing/grouping the bits of the binary number.</p>
+\begin{equation}
+\texttt{6C2A}_{16} = \texttt{0110}\;\texttt{1100}\;\texttt{0010}\;\texttt{1010}_{2}\tag{20.1}
+\end{equation}
+<p>If you use these constructions repeatedly, then some <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> macros might be useful.  It might also be beneficial for us to add some PreTeXt markup for such numbers used in a paragraph—send us a feature request.</p>
+<article class="theorem-like" id="theorem-2"><h6 class="heading">
+<span class="type">Theorem</span><span class="codenumber">20.3</span>
+</h6>
+<p id="p-635">This is a spurious theorem to break up the run of consecutive <tt class="code-inline tex2jax_ignore">listing</tt> so we might test the effect.</p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-6" id="proof-6"><article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6></article></a></div>
+<div id="hk-proof-6" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-636">This is a proof that is authored “detached.”  It is not associated with the theorem above in a way other than simply following it.</p></article></div>
+<p id="p-637">A specialized version of a program listing is an interactive command/response session at a command-line, where differing fonts are used to differentiate the system prompt, the user's commands, and the system's reaction.  A   <tt class="code-inline tex2jax_ignore">console</tt> session may be used by itself inside a <tt class="code-inline tex2jax_ignore">sidebyside</tt>, or it can be wrapped in a listing to get a number and a caption.  As elsewhere, you will need to escape ampersands and angle brackets (such as if you have a command using redirection), using <tt class="code-inline tex2jax_ignore">&amp;amp;</tt>, <tt class="code-inline tex2jax_ignore">&amp;lt;</tt>, and <tt class="code-inline tex2jax_ignore">&amp;gt;</tt> in your source.</p>
+<figure class="figure-like" id="console-raspberry-pi"><pre class="console"><span class="prompt unselectable">pi@raspberrypi ~/progs/chap02 $ </span><b>gcc -Wall -o intAndFloat intAndFloat.c
+</b><span class="prompt unselectable">pi@raspberrypi ~/progs/chap02 $ </span><b>./intAndFloat
+</b>The integer is 19088743 and the float is 19088.742188
+<span class="prompt unselectable">pi@raspberrypi ~/progs/chap02 $ </span><b>
+</b></pre>
+<figcaption><span class="heading">Listing</span><span class="codenumber">20.4</span>Console Session: <tt class="code-inline tex2jax_ignore">int</tt> and <tt class="code-inline tex2jax_ignore">float</tt></figcaption></figure><p id="p-638">Here is the plain version, placed inside a <tt class="code-inline tex2jax_ignore">sidebyside</tt> for layout control.  We simply place a small margin on the left (at 4%).</p>
+<div class="sidebyside" id="sidebyside-22"><div class="sbsrow" style="margin-left:4%;margin-right:4%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><pre class="console"><span class="prompt unselectable">pi@raspberrypi ~/progs/chap02 $ </span><b>gcc -Wall -o intAndFloat intAndFloat.c
+</b><span class="prompt unselectable">pi@raspberrypi ~/progs/chap02 $ </span><b>./intAndFloat
+</b>The integer is 19088743 and the float is 19088.742188
+<span class="prompt unselectable">pi@raspberrypi ~/progs/chap02 $ </span><b>
+</b></pre></div></div></div>
+<p id="p-639">If your console input exceeds more than one line, you can author it across several lines and your choice of line breaks will be reflected in the rendering.  You can decide to indent lines after the first one for clarity, if desired.  You can also decide if your audience needs line-continuation characters or not.  (But be careful, a backslash, “<tt class="code-inline tex2jax_ignore">\</tt>,” will require you to define the <tt class="code-inline tex2jax_ignore">latex.console.macro-char</tt> xsltproc stringparam to something else, as explained below.)</p>
+<figure class="figure-like" id="console-raspberry-pi-multi"><pre class="console"><span class="prompt unselectable">pi@raspberrypi ~/progs/chap02 $ </span><b>gcc -Wall
+    -o intAndFloat intAndFloat.c
+</b><span class="prompt unselectable">pi@raspberrypi ~/progs/chap02 $ </span><b>./intAndFloat
+</b>The integer is 19088743 and the float is 19088.742188
+<span class="prompt unselectable">pi@raspberrypi ~/progs/chap02 $ </span><b>
+</b></pre>
+<figcaption><span class="heading">Listing</span><span class="codenumber">20.5</span>Console Session: <tt class="code-inline tex2jax_ignore">int</tt> and <tt class="code-inline tex2jax_ignore">float</tt> (multi-line input)</figcaption></figure><p id="p-640">Notice in the HTML version of the above example that when you highlight all, or a portion, of the listing for a cut&amp;paste that the prompts are not included.</p>
+<p id="p-641">There is one subtlety with a <tt class="code-inline tex2jax_ignore">console</tt> session rendered as <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> output.  The user input is made bold by a <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> macro, which means that your code cannot contain the special <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> characters “\”, “{”, and “}”, which are used to begin a macro, begin a group, and end a group (respectively).  You will get an error message if this condition exists, and there are parameters <tt class="code-inline tex2jax_ignore">latex.console.macro-char</tt>, <tt class="code-inline tex2jax_ignore">latex.console.begin-char</tt>, and <tt class="code-inline tex2jax_ignore">latex.console.end-char</tt> that will allow you to specify alternatives (which need to be characters that do not appear in <em class="emphasis">any</em> of your console sessions, document-wide).  The characters <tt class="code-inline tex2jax_ignore">&amp; % $ # _ { } ~ ^ \</tt> have special meaning in <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> but should be available for duty as these alternative characters (though not all have been tested).  The backslash used in pathnames for Windows is a highly likely case where this needs adjustment.</p>
+<p id="p-642">There is no good way to provide an example of this situation, without making a document with an error in it, out-of-the-box.  So experiment by using <tt class="code-inline tex2jax_ignore">--stringparam</tt> on the <tt class="code-inline tex2jax_ignore">xsltproc</tt> command-line with alternative characters that will behave with the example above, and with characters that will cause the example above to raise errors.  In practice, you may want to specify alternative characters in a thin XSL extension file specific to your project.</p>
+<p id="p-643">We conclude with a longer example, an assembly language program from Bob Plantz, included to test a <tt class="code-inline tex2jax_ignore">listing</tt> breaking across pages in PDF output.</p>
+<figure class="figure-like" id="listing-4"><pre class="prettyprint" style="font-size:80%">@ structPass2.s
+@ Allocates two structs and assigns a value to each field
+@ in each struct, then displays the values.
+@ Bob Plantz - 6 July 2016
+
+@ Constants for assembler
+        .include "theTag_struct.s"  @ theTag struct defs.
+        .equ    y,-28           @ y struct
+        .equ    x,-16           @ x struct
+        .equ    locals,28       @ space for the structs
+
+@ Constant program data
+        .section .rodata
+        .align  2
+displayX:
+        .asciz        "x fields:\n"
+displayY:
+        .asciz        "y fields:\n"
+dispAChar:
+        .asciz        "         aChar = "
+dispAnInt:
+        .asciz        "         anInt = "
+dispOtherChar:
+        .asciz        "   anotherChar = "
+
+@ The program
+        .text
+        .align  2
+        .global main
+        .type   main, %function
+main:
+        stmfd   sp!, {r4, fp, lr}   @ save caller's info
+        add     fp, sp, #8      @ our frame pointer
+        sub     sp, sp, #locals @ for the structs
+
+@ fill the x struct
+        add     r0, fp, #x      @ address of x struct
+        mov     r1, #'1
+        mov     r2, #456
+        mov     r3, #'2
+        bl      loadStruct
+
+@ fill the y struct
+        add     r0, fp, #y      @ address of y struct
+        mov     r1, #'a
+        mov     r2, #123
+        mov     r3, #'b
+        bl      loadStruct
+
+@ display x struct
+        add     r4, fp, #x        @ address of x struct
+        ldr     r0, displayXaddr
+        bl      writeStr
+        ldr     r0, dispACharAddr @ display aChar
+        bl      writeStr
+        ldrb    r0, [r4, #aChar]
+        bl      putChar
+        bl      newLine
+        ldr     r0, dispAnIntAddr @ display anInt
+        bl      writeStr
+        ldr     r0, [r4, #anInt]
+        bl      putDecInt
+        bl      newLine
+        ldr     r0, dispOtherCharAddr @ display anotherChar
+        bl      writeStr
+        ldrb    r0, [r4, #anotherChar]
+        bl      putChar
+        bl      newLine
+
+@ display y struct
+        add     r4, fp, #y        @ address of y struct
+        ldr     r0, displayXaddr
+        bl      writeStr
+        ldr     r0, dispACharAddr @ display aChar
+        bl      writeStr
+        ldrb    r0, [r4, #aChar]
+        bl      putChar
+        bl      newLine
+        ldr     r0, dispAnIntAddr @ display anInt
+        bl      writeStr
+        ldr     r0, [r4, #anInt]
+        bl      putDecInt
+        bl      newLine
+        ldr     r0, dispOtherCharAddr @ display anotherChar
+        bl      writeStr
+        ldrb    r0, [r4, #anotherChar]
+        bl      putChar
+        bl      newLine
+
+        mov     r0, #0          @ return 0;
+        sub     sp, fp, #8      @ restore sp
+        ldmfd   sp!, {r4, fp, pc}   @ restore and return
+
+        .align  2
+@ addresses of messages
+displayXaddr:
+        .word   displayX
+displayYaddr:
+        .word   displayY
+dispACharAddr:
+        .word   dispAChar
+dispAnIntAddr:
+        .word   dispAnInt
+dispOtherCharAddr:
+        .word   dispOtherChar
+</pre>
+<figcaption><span class="heading">Listing</span><span class="codenumber">20.6</span>A longer program listing</figcaption></figure><p id="p-644">In <abbr class="initialism">HTML</abbr> output, a program can be interactive.  This is an example program provided by <a class="external-url" href="http://www.pythontutor.com/" target="_blank">Python Tutor</a>.</p>
+<figure class="figure-like" id="program-interactive"><div class="pytutorVisualizer" id="happy-div" data-tracefile="pytutor/happy.json" data-params='{"verticalStack": true, "embeddedMode": false, "codeDivWidth": 600, "codeDivHeight": 300}'></div>
+<figcaption><span class="heading">Listing</span><span class="codenumber">20.7</span>An interactive Python program, using <span class="booktitle">Python Tutor</span></figcaption></figure></section></div></main>
+</div>
+<script type="text/javascript">createAllVisualizersFromHtmlAttrs();</script>
+</body>
+</html>
