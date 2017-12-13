@@ -789,6 +789,10 @@ def mytransform_html(text):
 
 #    # see what happens when we omit headers
 #    thetext = re.sub(r"<header title[^<>]+>(.*?)</header>", r"\1", thetext, 0, re.DOTALL)
+
+# convert the TOC to nested lists
+    thetext = re.sub('<nav id="toc">(.*?)</nav>', redo_toc, thetext, 1, re.DOTALL)
+
     thetext = re.sub('<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">',
                      '<link href="../../css/refactor-add-on.css" rel="stylesheet" type="text/css">\n\
                      <link href="../../css/new_a.css" rel="stylesheet" type="text/css">\n\
@@ -802,6 +806,20 @@ def mytransform_html(text):
                      thetext)
 
     return thetext
+
+###################
+
+def redo_toc(txt):
+
+    thetext = txt.group(1)
+
+    thetext = re.sub('<h2 class="link">', '<li>', thetext)
+    thetext = re.sub('<h2 class="link active">', '<li class="active">', thetext)
+    thetext = re.sub('</h2>', '</li>', thetext)
+
+    thetext = re.sub('</li>\s*<ul>(.*?)</ul>', '\n<ul>' + r"\1" + '</ul>\n</li>', thetext, 0, re.DOTALL)
+
+    return '<nav id="toc">\n<ul>' + thetext + '</ul>\n</nav>'
 
 ###################
 
