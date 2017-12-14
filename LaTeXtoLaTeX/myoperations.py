@@ -791,7 +791,7 @@ def mytransform_html(text):
 #    thetext = re.sub(r"<header title[^<>]+>(.*?)</header>", r"\1", thetext, 0, re.DOTALL)
 
 # convert the TOC to nested lists
-    thetext = re.sub('<nav id="toc">(.*?)</nav>', redo_toc, thetext, 1, re.DOTALL)
+#    thetext = re.sub('<nav id="toc">(.*?)</nav>', redo_toc, thetext, 1, re.DOTALL)
 
     thetext = re.sub('<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">',
                      '<link href="../../css/refactor-add-on.css" rel="stylesheet" type="text/css">\n\
