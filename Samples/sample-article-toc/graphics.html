@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2017-12-13T12:11:06-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SA Graphics</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/javascript" src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script><script>(function() {
+  var cx = '008832104071767086392:j6aknlqevbm';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.6/jsxgraph.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.6/jsxgraphcore.js"></script><link href="../../css/refactor-3.css" rel="stylesheet" type="text/css">
+<link href="../../css/refactor-add-on.css" rel="stylesheet" type="text/css">
+                     <link href="../../css/new_a.css" rel="stylesheet" type="text/css">
+                     <link href="../../css/new_b.css" rel="stylesheet" type="text/css">
+                     <link href="../../css/new_c.css" rel="stylesheet" type="text/css">
+                     <link href="../../css/new_d.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="http://pythontutor.com/build/pytutor-embed.bundle.js?cc25af72af" charset="utf-8"></script>
+</head>
+<body class="mathbook-article has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\require{cancel}\newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4} 
+\newcommand{\myequation}[2]{#1\amp =#2} 
+\newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+\newcommand{\testingescapedpercent}{ \% } 
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<div class="searchwrapper"><div class="gcse-search"></div></div>
+<a id="logo-link" href="http://mathbook.pugetsound.edu" target="_blank"><img src="images/book-cover-google-art-project.jpg" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="derivatives.html"><span class="title">Derivatives and Integrals</span><span class="subtitle">An Annotated Discourse</span></a></h1>
+<p class="byline">Robert Beezer</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-8.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="derivatives.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-10.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-8.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="derivatives.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-10.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc">
+<ul><li><a href="index.html" data-scroll="index"><span class="title">Front Matter</span></a></li>
+<li><a href="section-1.html" data-scroll="section-1"><span class="codenumber">1</span><span class="title">Introduction</span></a></li>
+<li><a href="section-fundamental-theorem.html" data-scroll="section-fundamental-theorem"><span class="codenumber">2</span><span class="title">The Fundamental Theorem</span></a></li>
+<li><a href="section-sage-cells.html" data-scroll="section-sage-cells"><span class="codenumber">3</span><span class="title">Computing Integrals with Sage (\(\int\))</span></a></li>
+<li><a href="interesting-corollary.html" data-scroll="interesting-corollary"><span class="codenumber">4</span><span class="title">An Interesting Corollary</span></a>
+<ul>
+<li><a href="interesting-corollary.html#subsection-1" data-scroll="subsection-1">Second Version of <abbr class="acronym">FTC</abbr></a></li>
+<li><a href="interesting-corollary.html#subsection-2" data-scroll="subsection-2">A Pedagogical Note</a></li>
+<li><a href="interesting-corollary.html#subsection-3" data-scroll="subsection-3">Theorem-Like Environments</a></li>
+<li><a href="interesting-corollary.html#subsection-4" data-scroll="subsection-4">Linking Sage Cells</a></li>
+<li><a href="interesting-corollary.html#subsection-5" data-scroll="subsection-5">Hierarchy</a></li>
+<li><a href="interesting-corollary.html#subsection-intro-conclude" data-scroll="subsection-intro-conclude">Introductions and Conclusions</a></li>
+<li><a href="interesting-corollary.html#subsection-paragraph-markup" data-scroll="subsection-paragraph-markup">Some Paragraph-Level Markup</a></li>
+</ul>
+</li>
+<li><a href="section-5.html" data-scroll="section-5"><span class="codenumber">5</span><span class="title">Some Facts and Figures</span></a></li>
+<li><a href="section-6.html" data-scroll="section-6"><span class="codenumber">6</span><span class="title">Some Advanced Ideas</span></a></li>
+<li><a href="section-7.html" data-scroll="section-7"><span class="codenumber">7</span><span class="title">Mathematics</span></a>
+<ul>
+<li><a href="section-7.html#subsection-8" data-scroll="subsection-8">Basic Mathematics</a></li>
+<li><a href="section-7.html#subsection-9" data-scroll="subsection-9">Displayed Mathematics</a></li>
+<li><a href="section-7.html#subsection-10" data-scroll="subsection-10"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> Packages and MathJax Extensions</a></li>
+<li><a href="section-7.html#subsection-11" data-scroll="subsection-11">Advanced Mathematics</a></li>
+<li><a href="section-7.html#subsection-12" data-scroll="subsection-12">Local Tags on Equations</a></li>
+</ul>
+</li>
+<li><a href="section-8.html" data-scroll="section-8"><span class="codenumber">8</span><span class="title">Special, Reserved, and Escape Characters</span></a>
+<ul>
+<li><a href="section-8.html#subsection-reserved-characters" data-scroll="subsection-reserved-characters">Reserved Characters</a></li>
+<li><a href="section-8.html#subsection-14" data-scroll="subsection-14">Pseudo-Characters and Constructions</a></li>
+<li><a href="section-8.html#section-urls" data-scroll="section-urls">URLs</a></li>
+<li><a href="section-8.html#subsection-16" data-scroll="subsection-16">Quotations</a></li>
+<li><a href="section-8.html#subsection-17" data-scroll="subsection-17">Groupings</a></li>
+<li><a href="section-8.html#subsection-18" data-scroll="subsection-18">Biological Names</a></li>
+<li><a href="section-8.html#subsection-19" data-scroll="subsection-19">Verbatim in titles, <tt class="code-inline tex2jax_ignore">\a&amp;b#c%d~e{f}g$h_i^j</tt>, OK</a></li>
+</ul>
+</li>
+<li class="active"><a href="graphics.html" data-scroll="graphics"><span class="codenumber">9</span><span class="title">Graphics</span></a>
+<ul>
+<li><a href="graphics.html#subsection-20" data-scroll="subsection-20"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> images</a></li>
+<li><a href="graphics.html#subsection-21" data-scroll="subsection-21">Placing Images without a Caption</a></li>
+<li><a href="graphics.html#subsection-22" data-scroll="subsection-22">Asymptote</a></li>
+<li><a href="graphics.html#subsection-23" data-scroll="subsection-23">Sage Plots</a></li>
+<li><a href="graphics.html#subsection-24" data-scroll="subsection-24">Images from External Sources</a></li>
+<li><a href="graphics.html#subsection-25" data-scroll="subsection-25">Copies of Images</a></li>
+<li><a href="graphics.html#subsection-26" data-scroll="subsection-26">Technical Details</a></li>
+<li><a href="graphics.html#subsection-27" data-scroll="subsection-27">Caption Testing</a></li>
+</ul>
+</li>
+<li><a href="section-10.html" data-scroll="section-10"><span class="codenumber">10</span><span class="title">Demonstrations</span></a></li>
+<li><a href="section-11.html" data-scroll="section-11"><span class="codenumber">11</span><span class="title">Further Reading</span></a>
+<ul>
+<li><a href="section-11.html#subsection-28" data-scroll="subsection-28">Specialized Subdivisions</a></li>
+<li><a href="section-11.html#references-1" data-scroll="references-1">References</a></li>
+<li><a href="section-11.html#exercises-2" data-scroll="exercises-2">Exercises</a></li>
+<li><a href="section-11.html#exercises-3" data-scroll="exercises-3">More Exercises</a></li>
+</ul>
+</li>
+<li><a href="section-12.html" data-scroll="section-12"><span class="codenumber">12</span><span class="title">List Calisthenics</span></a>
+<ul>
+<li><a href="section-12.html#subsection-29" data-scroll="subsection-29">Lists, Generally</a></li>
+<li><a href="section-12.html#subsection-30" data-scroll="subsection-30">List Spacing, I</a></li>
+<li><a href="section-12.html#subsection-31" data-scroll="subsection-31">List Spacing, II</a></li>
+<li><a href="section-12.html#exercises-4" data-scroll="exercises-4">Exercises (with lists)</a></li>
+<li><a href="section-12.html#subsection-32" data-scroll="subsection-32">Description Lists</a></li>
+<li><a href="section-12.html#subsection-33" data-scroll="subsection-33">Named Lists</a></li>
+<li><a href="section-12.html#subsection-34" data-scroll="subsection-34">Testing List Decompositions</a></li>
+<li><a href="section-12.html#references-2" data-scroll="references-2">References (with lists in Annotations)</a></li>
+</ul>
+</li>
+<li><a href="section-13.html" data-scroll="section-13"><span class="codenumber">13</span><span class="title">Table Calisthenics</span></a></li>
+<li><a href="section-14.html" data-scroll="section-14"><span class="codenumber">14</span><span class="title">Embedded Interactive Elements</span></a>
+<ul>
+<li><a href="section-14.html#subsection-35" data-scroll="subsection-35">GeoGebra</a></li>
+<li><a href="section-14.html#subsection-36" data-scroll="subsection-36">JSXGraph</a></li>
+</ul>
+</li>
+<li><a href="section-video.html" data-scroll="section-video"><span class="codenumber">15</span><span class="title">Video</span></a></li>
+<li><a href="exercises.html" data-scroll="exercises"><span class="codenumber">16</span><span class="title">Exercises</span></a></li>
+<li><a href="section-cross-referencing.html" data-scroll="section-cross-referencing"><span class="codenumber">17</span><span class="title">Cross-Referencing</span></a></li>
+<li><a href="section-internationalization.html" data-scroll="section-internationalization"><span class="codenumber">18</span><span class="title">Internationalization</span></a></li>
+<li><a href="section-18.html" data-scroll="section-18"><span class="codenumber">19</span><span class="title">Pre-Formatted Text</span></a></li>
+<li><a href="section-programs.html" data-scroll="section-programs"><span class="codenumber">20</span><span class="title">Program Listings</span></a></li>
+<li><a href="section-20.html" data-scroll="section-20"><span class="codenumber">21</span><span class="title">Units of Measure</span></a></li>
+<li><a href="section-side-by-side.html" data-scroll="section-side-by-side"><span class="codenumber">22</span><span class="title">Side-By-Side Panels</span></a>
+<ul>
+<li><a href="section-side-by-side.html#subsection-37" data-scroll="subsection-37">Figures with Numbers Side-By-Side</a></li>
+<li><a href="section-side-by-side.html#subsection-38" data-scroll="subsection-38">Images</a></li>
+<li><a href="section-side-by-side.html#subsection-39" data-scroll="subsection-39">Common Side-By-Side Constructions</a></li>
+<li><a href="section-side-by-side.html#subsection-40" data-scroll="subsection-40">A Single Captionless Image</a></li>
+<li><a href="section-side-by-side.html#subsection-41" data-scroll="subsection-41">Vertical Alignment</a></li>
+<li><a href="section-side-by-side.html#subsection-42" data-scroll="subsection-42">Text Next to Text and Images</a></li>
+<li><a href="section-side-by-side.html#subsection-43" data-scroll="subsection-43">Image Formats, Side-by-Sides</a></li>
+<li><a href="section-side-by-side.html#subsection-44" data-scroll="subsection-44">Tables Side-By-Side</a></li>
+<li><a href="section-side-by-side.html#subsection-45" data-scroll="subsection-45">Tables Next to Figures</a></li>
+<li><a href="section-side-by-side.html#subsection-46" data-scroll="subsection-46">Tables Next to Text</a></li>
+<li><a href="section-side-by-side.html#subsection-47" data-scroll="subsection-47">Tabular Next to Each Other</a></li>
+<li><a href="section-side-by-side.html#subsection-48" data-scroll="subsection-48">Lists in Side-by-Sides</a></li>
+<li><a href="section-side-by-side.html#subsection-sbs-other-panels" data-scroll="subsection-sbs-other-panels">Other Panels</a></li>
+<li><a href="section-side-by-side.html#subsection-50" data-scroll="subsection-50">Poems as Side-By-Side Panels</a></li>
+<li><a href="section-side-by-side.html#subsection-sbsgroup" data-scroll="subsection-sbsgroup">Side-By-Side Groups</a></li>
+<li><a href="section-side-by-side.html#subsection-52" data-scroll="subsection-52">Testing Styling of Related Elements</a></li>
+</ul>
+</li>
+<li><a href="section-22.html" data-scroll="section-22"><span class="codenumber">23</span><span class="title">Side-by-Side Gallery</span></a></li>
+<li><a href="poetry.html" data-scroll="poetry"><span class="codenumber">24</span><span class="title">Poetry</span></a></li>
+<li><a href="advanced-numbering.html" data-scroll="advanced-numbering"><span class="codenumber">25</span><span class="title">Advanced Numbering</span></a>
+<ul>
+<li><a href="advanced-numbering.html#subsection-53" data-scroll="subsection-53">One</a></li>
+<li><a href="advanced-numbering.html#subsection-54" data-scroll="subsection-54">Two</a></li>
+<li><a href="advanced-numbering.html#subsection-55" data-scroll="subsection-55">Three</a></li>
+<li><a href="advanced-numbering.html#subsection-56" data-scroll="subsection-56">Four</a></li>
+<li><a href="advanced-numbering.html#subsection-57" data-scroll="subsection-57">Five</a></li>
+<li><a href="advanced-numbering.html#subsection-local-theorems" data-scroll="subsection-local-theorems">Theorems in This Section</a></li>
+<li><a href="advanced-numbering.html#subsection-59" data-scroll="subsection-59">A Title with ] a Right Bracket</a></li>
+</ul>
+</li>
+<li><a href="section-25.html" data-scroll="section-25"><span class="codenumber">26</span><span class="title">Customizations</span></a>
+<ul><li><a href="section-25.html#rename-facility" data-scroll="rename-facility">Renaming Document Parts</a></li></ul>
+</li>
+<li><a href="backmatter.html" data-scroll="backmatter"><span class="title">Reference</span></a>
+<ul>
+<li><a href="appendix-1.html" data-scroll="appendix-1">Notation</a></li>
+<li><a href="appendix-2.html" data-scroll="appendix-2">Solutions to Selected Exercises</a></li>
+<li><a href="appendix-results.html" data-scroll="appendix-results">List of Results</a></li>
+<li><a href="appendix-4.html" data-scroll="appendix-4">Index</a></li>
+<li><a href="references-3.html" data-scroll="references-3">References</a></li>
+<li><a href="index-1.html" data-scroll="index-1">Index</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+</ul>
+</li></ul>
+</nav><div class="extras"><nav><a class="feedback-link" href="not-implemented.html" target="_blank">Feedback</a><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="graphics"><header title="Section 9 Graphics"><h2 class="heading hide-type" alt="Section 9 Graphics">
+<span class="type">Section</span><span class="codenumber">9</span><span class="title">Graphics</span>
+</h2>
+<a href="graphics.html" class="permalink">¶</a></header><section class="introduction" id="introduction-8"><p id="p-253">Mathbook XML supports several languages for describing diagrams and pictures with human-readable source code (i.e. plain text), rather than using a “paint” program.  Any <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> macros used in the rest of your document may be employed in the <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span>-standalone or Asymptote diagrams (with Sage graphics coming next?).</p></section><section class="subsection" id="subsection-20"><header title="Subsection 9.1 LaTeX images"><h3 class="heading hide-type" alt="Subsection 9.1 LaTeX images">
+<span class="type">Subsection</span><span class="codenumber">9.1</span><span class="title"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> images</span>
+</h3></header><p id="p-254">There are several graphics engine packages that a <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> document can employ. Code from these packages renders diagrams automatically as part of normal processing of <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> files.  For HTML output the <tt class="code-inline tex2jax_ignore">mbx</tt> script produces SVG versions of the pictures.  The script can also produce standalone TEX source files, PDFs, PNGs, and EPSs. The packages should be loaded in <tt class="code-inline tex2jax_ignore">docinfo/latex-image-preamble</tt>, which is also where global package settings should be made. As mentioned in Subsection <a href="section-8.html#subsection-reserved-characters" alt="Subsection 8.1 Reserved Characters" title="Subsection 8.1 Reserved Characters">8.1</a>, if any ampersands occur in your <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> code you should use the <tt class="code-inline tex2jax_ignore">\amp</tt> macro. These first examples are from the <a class="external-url" href="http://www.texample.net/tikz/examples/" target="_blank">TeXample.net</a> site.</p>
+<figure class="figure-like" id="figure-tikz-electronics"><object type="image/svg+xml" style="width:100%; margin:auto; display:block;" data="images/tikz-electronics.svg" alt="A pile of electronic components wired together"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object><figcaption><span class="heading">Figure</span><span class="codenumber">9.1</span>TikZ Electronics Diagram</figcaption></figure><p id="p-255">The next example began life in <a class="external-url" href="http://www.frontiernet.net/~eugene.ressler/" target="_blank">Sketch</a>, which will output TikZ code (though the code has been edited by hand for readability).</p>
+<figure class="figure-like" id="figure-tikz-cone3D"><object type="image/svg+xml" style="width:70%; margin:auto; display:block;" data="images/tikz-cone.svg" alt=""><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object><figcaption><span class="heading">Figure</span><span class="codenumber">9.2</span>TikZ Cone Drawing</figcaption></figure><p id="p-256">The pgfplots package was included in <tt class="code-inline tex2jax_ignore">docinfo/latex-image-preamble</tt>. Here, it is used. Also, here we demonstrate using <tt class="code-inline tex2jax_ignore">\amp</tt> where you would normally use an ampersand in <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span>. There are known issues with <tt class="code-inline tex2jax_ignore">xelatex</tt> processing any gradient shading in <tt class="code-inline tex2jax_ignore">tikz</tt>. To (successfully) create the gradient shading in the 3D image here, you may need to use <tt class="code-inline tex2jax_ignore">pdflatex</tt> until <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> developers resolve this issue.</p>
+<figure class="figure-like" id="figure-pgfplots-demo"><object type="image/svg+xml" style="width:100%; margin:auto; display:block;" data="images/pgfplots-demo.svg" alt="A pgfplots example, with a function, a parametric curve, and some points plotted."><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object><figcaption><span class="heading">Figure</span><span class="codenumber">9.3</span>Sample pgfplots plot</figcaption></figure><p id="p-257">A plot might use a graphics language to draw the axes and grid, but the data might be from an experiment and live in an external file that you do not wish to place in your source.  Place such a file in a subdirectory directly below the directory where your master source file resides.  In the example below <tt class="code-inline tex2jax_ignore">data</tt> is the directory and <tt class="code-inline tex2jax_ignore">hodgkin-huxley-data.dat</tt> is the file with the data points.  You <em class="emphasis">must</em> place the file in a subdirectory (it cannot reside next to your source file), but that directory may have subdirectories if you have many such files and want to organize them that way.  Then the <tt class="code-inline tex2jax_ignore">--include</tt> command-line argument to the <tt class="code-inline tex2jax_ignore">mbx</tt> script will manage the external files properly as it creates individual image files.</p>
+<p id="p-258">It is still your responsibility to be sure this directory of external data files follows your <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> output to whatever directory you use to convert to a PDF and is in the right location for the relative path given in the XML source.  The discussion above only applies to generating individual image files, such as you would need for the HTML output.</p>
+<figure class="figure-like" id="figure-pgfplots-data-demo"><object type="image/svg+xml" style="width:100%; margin:auto; display:block;" data="images/pgfplots-data-demo.svg" alt="A pgfplots example, with external data plotted."><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object><figcaption><span class="heading">Figure</span><span class="codenumber">9.4</span>External data in a pgfplots plot</figcaption></figure></section><section class="subsection" id="subsection-21"><header title="Subsection 9.2 Placing Images without a Caption"><h3 class="heading hide-type" alt="Subsection 9.2 Placing Images without a Caption">
+<span class="type">Subsection</span><span class="codenumber">9.2</span><span class="title">Placing Images without a Caption</span>
+</h3></header><p id="p-259">To place an image without a caption, use the <tt class="code-inline tex2jax_ignore">&lt;sidebyside&gt;</tt> layout element, containing just a single <tt class="code-inline tex2jax_ignore">&lt;image&gt;</tt>.  There is no way to add a caption, and the item will not be numbered.  You cannot cross-reference it, nor will it appear in a knowl in HTML output.  You will get a bit of vertical separation for the transitions to/from horizontal layout.  Use <tt class="code-inline tex2jax_ignore">margins=auto</tt> on the <tt class="code-inline tex2jax_ignore">&lt;sidebyside&gt;</tt> to center the image—this should become the default behavior.  A variety of other elements may be placed in a similar manner.  See Section <a href="section-side-by-side.html" alt="Section 22 Side-By-Side Panels" title="Section 22 Side-By-Side Panels">22</a> to learn more about the <tt class="code-inline tex2jax_ignore">&lt;sidebyside&gt;</tt> layout element.</p>
+<div class="sidebyside" id="sidebyside-3"><div class="sbsrow" style="margin-left:35%;margin-right:35%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img width="100%" src="images/cross-square.png" alt=""></div></div></div></section><section class="subsection" id="subsection-22"><header title="Subsection 9.3 Asymptote"><h3 class="heading hide-type" alt="Subsection 9.3 Asymptote">
+<span class="type">Subsection</span><span class="codenumber">9.3</span><span class="title">Asymptote</span>
+</h3></header><p id="p-260">The Asymptote graphics language may be placed in your source to draw graphs, diagrams or pictures.  Rules for formatting code are identical to those for Sage code.  For more on Asymptote see <a class="external-url" href="http://asymptote.sourceforge.net/" target="_blank"><tt class="code-inline tex2jax_ignore">http://asymptote.sourceforge.net/</tt></a>.</p>
+<p id="p-261">This is a simple physics diagram about levers, taken from the Asymptote documentation.  In the HTML version of this article, the images are SVG's and so should scale nicely when you zoom in on the page.</p>
+<figure class="figure-like" id="figure-asymptote-levers"><object type="image/svg+xml" style="width:100%; margin:auto; display:block;" data="images/asymptote-lever.svg" alt="Moments on a lever"><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object><figcaption><span class="heading">Figure</span><span class="codenumber">9.5</span>Asymptote Lever Demonstration</figcaption></figure><p id="p-262">And a colorful contour plot with logarithmic scale.  Again, from the Asymptote documentation.</p>
+<figure class="figure-like" id="figure-asymptote-contour-plot"><object type="image/svg+xml" style="width:100%; margin:auto; display:block;" data="images/asymptote-contour.svg" alt=""><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object><figcaption><span class="heading">Figure</span><span class="codenumber">9.6</span>Asymptote Contour Plot</figcaption></figure><p id="p-263">Here is the lever diagram again, but now we have added an integral to one of the legends, <em class="emphasis">using a <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> macro of our own,</em> which is idential to one we used in the early part of this article.  The point is, we only needed to define the macro once for the entire document, and it is available as we make Asymptote diagrams.  This device can be used to maintain flexibility and consistency in your choice of notation.</p>
+<figure class="figure-like" id="figure-asymptote-latex-macro"><object type="image/svg+xml" style="width:100%; margin:auto; display:block;" data="images/asymptote-lever-integral.svg" alt=""><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object><figcaption><span class="heading">Figure</span><span class="codenumber">9.7</span>Aymptote Lever, plus Integral</figcaption></figure><p id="p-264">And finally, an example of a 3-D graph (from the documentation again).</p>
+<figure class="figure-like" id="figure-asymptote-surface"><object type="image/svg+xml" style="width:40%; margin:auto; display:block;" data="images/asymptote-surface.svg" alt=""><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object><figcaption><span class="heading">Figure</span><span class="codenumber">9.8</span>Asymptote 3-D Surface</figcaption></figure></section><section class="subsection" id="subsection-23"><header title="Subsection 9.4 Sage Plots"><h3 class="heading hide-type" alt="Subsection 9.4 Sage Plots">
+<span class="type">Subsection</span><span class="codenumber">9.4</span><span class="title">Sage Plots</span>
+</h3></header><p id="p-265">Any of the numerous capabilities of Sage may be used to produce any graphics object, be it the simple graph of a single-variable function or some realization of a more complicated object.  All of the usual rules about formatting Sage code (esp. indentation) apply, along with one more caveat.  The last line of your Sage code <b><i>must</i></b> return a Sage <tt class="code-inline tex2jax_ignore">Graphics</tt> object (or 3D plot).  The <tt class="code-inline tex2jax_ignore">mbx</tt> script will isolate this last line, use it as the RHS of an assignment statement, and the Sage <tt class="code-inline tex2jax_ignore">.save()</tt> method will be called to generate the image, which is either a Portable Document Format (PDF) file amenable to <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> output, or a Scalable Vector Graphics (SVG) file amenable to HTML output.  For visualizations of 3D plots, Sage will only produce Portable Network Graphics (PNG) files, which can be included in HTML pages or <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> output.</p>
+<figure class="figure-like" id="figure-sage-parabola"><object type="image/svg+xml" style="width:50%; margin:auto; display:block;" data="images/sageplot-parabola.svg" alt="A standard parabola on the interval [-2,4]"><img src="images/sageplot-parabola.png" width="50%" alt="A standard parabola on the interval [-2,4]"></object><figcaption><span class="heading">Figure</span><span class="codenumber">9.9</span>A Sage standard parabola, on \([-2,4]\)</figcaption></figure><p id="p-266">Pay careful attention to the requirement that the last line of your code be a graphics object.  In particular, while <tt class="code-inline tex2jax_ignore">show()</tt> might appear to do the right thing, it evaluates to Python's <tt class="code-inline tex2jax_ignore">None</tt> object and that is just what you will get.  The code for Figure <a knowl="./knowl/figure-sage-double-plot.html" knowl-id="xref-figure-sage-double-plot" alt="Figure 9.10 " title="Figure 9.10 ">9.10</a> illustrates creating two graphics objects and combining them into an expression on the last line that evaluates to a graphics object.</p>
+<figure class="figure-like" id="figure-sage-double-plot"><object type="image/svg+xml" style="width:45%; margin:auto; display:block;" data="images/sageplot-updown.svg" alt=""><img src="images/sageplot-updown.png" width="45%" alt=""></object><figcaption><span class="heading">Figure</span><span class="codenumber">9.10</span>Two Sage plots on one set of axes</figcaption></figure><p id="p-267">The following examples are from the <a class="external-url" href="http://www.sagemath.org/tour-graphics.html" target="_blank">Sage Tour</a>.  We package them into a <tt class="code-inline tex2jax_ignore">sidebyside</tt> layout element, see <a href="section-side-by-side.html" alt="Section 22 Side-By-Side Panels" title="Section 22 Side-By-Side Panels">Section 22</a>.</p>
+<div class="sidebyside" id="sidebyside-4">
+<div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><object type="image/svg+xml" style="width:100%; margin:auto; display:block;" data="images/sageplot-sentence-multigraph.svg" alt=""><img src="images/sageplot-sentence-multigraph.png" width="100%" alt=""></object></div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><object type="image/svg+xml" style="width:100%; margin:auto; display:block;" data="images/sageplot-polynomial-approximation.svg" alt=""><img src="images/sageplot-polynomial-approximation.png" width="100%" alt=""></object></div>
+</div>
+<div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<figcaption class="sbscaption" style="width:44.4444444444444%;"><span class="heading">Figure</span><span class="codenumber">9.11</span>A Sage multigraph of a sentence</figcaption><figcaption class="sbscaption" style="width:44.4444444444444%;"><span class="heading">Figure</span><span class="codenumber">9.12</span>Sage polynomial approximations of \(f(x)=1/(1+25x^2)\)</figcaption>
+</div>
+</div>
+<p id="p-268">From the Sage documentation, with slight modifications, credited to Douglas Summers-Stay.  A plot of the implicity defined surface</p>
+\begin{equation*}
+2 = \cos(x + ty) + \cos(x - ty) + \cos(y + tz) + \cos(y - tz) + \cos(z - tx) + \cos(z + tx)
+\end{equation*}
+<p>in rectangular \(xyz\) coordinates, with \(t\) equal to the golden ratio.</p>
+<figure class="figure-like" id="figure-sage-implicit-surface"><object type="image/svg+xml" style="width:50%; margin:auto; display:block;" data="images/sageplot-implicit-surface.svg" alt=""><img src="images/sageplot-implicit-surface.png" width="50%" alt=""></object><figcaption><span class="heading">Figure</span><span class="codenumber">9.13</span>A Sage implicitly defined 3D surface</figcaption></figure></section><section class="subsection" id="subsection-24"><header title="Subsection 9.5 Images from External Sources"><h3 class="heading hide-type" alt="Subsection 9.5 Images from External Sources">
+<span class="type">Subsection</span><span class="codenumber">9.5</span><span class="title">Images from External Sources</span>
+</h3></header><p id="p-269">If you have raster images (photographs, etc) then they are specified with complete filenames, as above in Figure <a knowl="./knowl/figure-function-derivative.html" knowl-id="xref-figure-function-derivative" alt="Figure 5.2 " title="Figure 5.2 ">5.2</a>.  If you have existing images that are vector graphics, then PDF format works best for <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> output and SVG format works best for HTML.  The utility <tt class="code-inline tex2jax_ignore">pdf2svg</tt> works well for converting PDF to SVG.  In this case, specify your source as a filenmae, but leave off the file extension, and the appropriate version will be used for the current output format.</p>
+<p id="p-270">The image below is provided from a PDF file for the <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> output, and was converted to an SVG for use with th HTML output.</p>
+<figure class="figure-like" id="figure-complete-graph"><object type="image/svg+xml" style="width:65%; margin:auto; display:block;" data="images/complete-graph.svg" alt=""><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object><figcaption><span class="heading">Figure</span><span class="codenumber">9.14</span>Complete graph on \(16\) vertices, from <tt class="code-inline tex2jax_ignore">www.texample.net</tt></figcaption></figure></section><section class="subsection" id="subsection-25"><header title="Subsection 9.6 Copies of Images"><h3 class="heading hide-type" alt="Subsection 9.6 Copies of Images">
+<span class="type">Subsection</span><span class="codenumber">9.6</span><span class="title">Copies of Images</span>
+</h3></header><p id="p-271">So you do not have to duplicate the source of an image (and risk them later diverging), or for other reasons of efficiency, you can place an image as a copy of another one.  The copy is an <em class="emphasis">exact</em> copy, such as having the identical width.  Though, if placed within a <tt class="code-inline tex2jax_ignore">figure</tt> element, the caption and so on, can be changed.</p>
+<p id="p-272">To use this feature, simply be certain to give the original an <tt class="code-inline tex2jax_ignore">xml:id</tt> and then place an <tt class="code-inline tex2jax_ignore">image</tt> tag where you want the copy.  Then use a <tt class="code-inline tex2jax_ignore">@copy</tt> attribute to point to the original.  Two test examples, one from TikZ source, the other from a raster image.</p>
+<figure class="figure-like" id="figure-tikz-cone3D-copied"><object type="image/svg+xml" style="width:70%; margin:auto; display:block;" data="images/tikz-cone.svg" alt=""><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object><figcaption><span class="heading">Figure</span><span class="codenumber">9.15</span>TikZ Cone Drawing (Copy)</figcaption></figure><figure class="figure-like" id="figure-captionless-titleless-image-copied"><img width="100%" src="images/cross-square.png" alt=""><figcaption><span class="heading">Figure</span><span class="codenumber">9.16</span>Copy of raster image, now numbered, captioned</figcaption></figure></section><section class="subsection" id="subsection-26"><header title="Subsection 9.7 Technical Details"><h3 class="heading hide-type" alt="Subsection 9.7 Technical Details">
+<span class="type">Subsection</span><span class="codenumber">9.7</span><span class="title">Technical Details</span>
+</h3></header><p id="p-273">The table below is a summary of how graphics and images are specified, constructed and manipulated.  Additional processing is indicated by reference to the Python script <tt class="code-inline tex2jax_ignore">mbx</tt>.  Images need to be placed relative to the <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> file that includes them during compilation, and placed relative to the <abbr class="initialism">HTML</abbr> files which reference/include them.  Author-provided image files may be placed in any subdirectory, and the <tt class="code-inline tex2jax_ignore">@source</tt> attribute should include the complete relative path with the subdirectory.  Files generated by the <tt class="code-inline tex2jax_ignore">mbx</tt> script will be specified in the output using the relative directory <tt class="code-inline tex2jax_ignore">images</tt>, which can be changed using the <tt class="code-inline tex2jax_ignore">directory.images</tt> stringparam.  There is no reason author-provided files cannot also be placed in this same directory (presuming no duplicate names). [This table is presently more readable in HTML, the PDF version will improve.]</p>
+<div class="sidebyside" id="sidebyside-5"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b2 r0 l0 t2 lines">MBX Element</td>
+<td class="l m b2 r0 l0 t2 lines">Specification</td>
+<td class="l m b2 r0 l0 t2 lines">
+<span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span>/Print</td>
+<td class="l m b2 r0 l0 t2 lines">HTML</td>
+<td class="l m b2 r0 l0 t2 lines">Notes</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"><tt class="code-inline tex2jax_ignore">image/@source</tt></td>
+<td class="l m b1 r0 l0 t0 lines">full relative path, w/ extension</td>
+<td class="l m b1 r0 l0 t0 lines">directly included</td>
+<td class="l m b1 r0 l0 t0 lines">directly included</td>
+<td class="l m b1 r0 l0 t0 lines">author-provided <abbr class="initialism">PNG</abbr>, <abbr class="initialism">JPEG</abbr>
+</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"><tt class="code-inline tex2jax_ignore">image/@source</tt></td>
+<td class="l m b1 r0 l0 t0 lines">full relative path, w/o extension</td>
+<td class="l m b1 r0 l0 t0 lines">presumes <abbr class="initialism">PDF</abbr>
+</td>
+<td class="l m b1 r0 l0 t0 lines">presumes <abbr class="initialism">SVG</abbr>
+</td>
+<td class="l m b1 r0 l0 t0 lines">author-provided</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"><tt class="code-inline tex2jax_ignore">image/latex-image-code</tt></td>
+<td class="l m b1 r0 l0 t0 lines">
+<span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span>-compatible source</td>
+<td class="l m b1 r0 l0 t0 lines">directly included</td>
+<td class="l m b1 r0 l0 t0 lines">
+<abbr class="initialism">SVG</abbr> via <tt class="code-inline tex2jax_ignore">mbx</tt>
+</td>
+<td class="l m b1 r0 l0 t0 lines">e.g. tikz, pgfplots, xypic</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"><tt class="code-inline tex2jax_ignore">image/sageplot</tt></td>
+<td class="l m b1 r0 l0 t0 lines">Sage code</td>
+<td class="l m b1 r0 l0 t0 lines">
+<abbr class="initialism">PDF</abbr> via <tt class="code-inline tex2jax_ignore">mbx</tt>
+</td>
+<td class="l m b1 r0 l0 t0 lines">
+<abbr class="initialism">SVG</abbr> via <tt class="code-inline tex2jax_ignore">mbx</tt>
+</td>
+<td class="l m b1 r0 l0 t0 lines">
+<abbr class="initialism">PNG</abbr> for 3-D</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"><tt class="code-inline tex2jax_ignore">image/asymptote</tt></td>
+<td class="l m b1 r0 l0 t0 lines">Asymptote code</td>
+<td class="l m b1 r0 l0 t0 lines">
+<abbr class="initialism">PDF</abbr> via <tt class="code-inline tex2jax_ignore">mbx</tt>
+</td>
+<td class="l m b1 r0 l0 t0 lines">
+<abbr class="initialism">SVG</abbr> via <tt class="code-inline tex2jax_ignore">mbx</tt>
+</td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table></div></div></div>
+<p id="p-274">In the early stages of a writing project, it may be best not to track provisional image files built with <tt class="code-inline tex2jax_ignore">mbx</tt> under version control, and just regenerate them periodically (see the <tt class="code-inline tex2jax_ignore">-r</tt> option for <tt class="code-inline tex2jax_ignore">mbx</tt>).  As a project matures, then it makes sense to put stable files under version control for collaborators and others.  In every case, managing graphics files (and other aspects of production), is much more pleasurable with a script (shell, Makefile, etc.)</p></section><section class="subsection" id="subsection-27"><header title="Subsection 9.8 Caption Testing"><h3 class="heading hide-type" alt="Subsection 9.8 Caption Testing">
+<span class="type">Subsection</span><span class="codenumber">9.8</span><span class="title">Caption Testing</span>
+</h3></header><p id="p-275">A caption could be as substantial as a paragraph, here we test out one such example.</p>
+<figure class="figure-like" id="figure-long-caption"><img width="20%" src="images/cross-square.png" alt=""><figcaption><span class="heading">Figure</span><span class="codenumber">9.17</span>A caption can be a whole paragraph with lots of technical details, and maybe a hyperlink to something external, such as <a class="external-url" href="http://mathbook.pugetsound.edu" target="_blank"><tt class="code-inline tex2jax_ignore">mathbook.pugetsound.edu</tt></a>.  There could be some inline mathematics, such as \(x^2 + y^2 = c^2\text{.}\)  Would a knowl open here?  Recursively?  Let's see: <a knowl="./knowl/figure-long-caption.html" knowl-id="xref-figure-long-caption" alt="Figure 9.17 " title="Figure 9.17 ">9.17</a>.  Display mathematics, side-by-sides, theorems, and lots of other things should be banned.  Footnotes sound like a bad idea.  Strange characters should be fine: §.</figcaption></figure></section></section></div></main>
+</div>
+<script type="text/javascript">createAllVisualizersFromHtmlAttrs();</script>
+</body>
+</html>
