@@ -2,3 +2,18 @@
 xxxxxxxxx.mathbook-content tt.code-inline {
     font-size: 200%;
 }
+
+#toc > ul  a  {
+    font-weight: bold;
+}
+
+
+#toc ul li a, #toc ul li a:link, #toc ul li a:visited {
+    color: #ffffff;
+    background: #3572a0;
+  }
+
+#toc ul li ul li a, #toc ul li a ul li a:link, #toc ul li ul li a:visited {
+    color: #671d12;
+    background: #f0f0f0;
+  }
