@@ -1,19 +1,23 @@
-/*#toc > ul > li> a, #toc > ul > li> a:link, #toc > ul > li> a:visited {
+#toc > ul > li> a, #toc > ul > li> a:link, #toc > ul > li> a:visited {
     font-weight: bold;
-    color: #707070;
-    background: #c1dff5;
+    color: #505050;
+    background: #dbf5ff;
+    border-color: #afc2e5;
     font-family: "PT Serif", "Times New Roman", Times, serif;
     padding-left: 0.2em;
 }
 
-#toc ul li a:active:active, #toc ul li a:active.active {
-    background: #ffb1a5;
+#toc ul li a.active {
+    color: #404040;
+    background: #fae5b6;
+    border-color: #d7b772;
 }
+/*The javascript is causing the color to change.*/
 
 #toc ul li a:hover {
-    color: #000000;
-    background: #ff8472;
-    border-color: #f46149;
+    color: #321a0c;
+    background: #fac793;
+    border-color: #ec704b;
 }
 
 #toc > ul > li:not(:first-child) {
@@ -34,4 +38,4 @@
 
 #toc > ul > li > a .codenumber + .title {
     margin-left: 2em;
-}*/
+}
