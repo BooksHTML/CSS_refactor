@@ -7,17 +7,21 @@
     padding-left: 0.2em;
 }
 
-#toc ul li a.active {
-    color: #404040;
-    background: #fae5b6;
-    border-color: #d7b772;
+#toc ul li ul a, #toc ul li ul a:link, #toc ul li ul a:visited {
+    color: #505050;
+    background: #ffffff;
 }
-/*The javascript is causing the color to change.*/
 
-#toc ul li a:hover {
+#toc ul li a:hover, #toc ul li ul a:hover {
     color: #321a0c;
     background: #fac793;
     border-color: #ec704b;
+}
+
+#toc ul li a.active, ul li ul a.active {
+    color: #404040;
+    background: #fae5b6;
+    border-color: #d7b772;
 }
 
 #toc > ul > li:not(:first-child) {

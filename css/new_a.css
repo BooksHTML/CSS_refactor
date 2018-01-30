@@ -1,6 +1,12 @@
-
-xxxxxxxxx.mathbook-content tt.code-inline {
-    font-size: 200%;
+#toc {
+  /* IMPORTANT height must be calculated by javascript. */
+  width: 240px;
+  margin: 0;
+  font-size: 14.72px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* Enable momentum scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
 }
 
 #toc > ul > li> a, #toc > ul > li> a:link, #toc > ul > li> a:visited {
@@ -15,7 +21,6 @@ xxxxxxxxx.mathbook-content tt.code-inline {
 #toc ul li a.active {
     background: #932919
 }
-/*The javascript is causing the color to change.*/
 
 #toc ul li a:hover {
     background: #671d12;
