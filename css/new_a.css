@@ -1,12 +1,17 @@
 #toc {
   /* IMPORTANT height must be calculated by javascript. */
-  width: 240px;
-  margin: 0;
-  font-size: 14.72px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  /* Enable momentum scrolling on iOS */
-  -webkit-overflow-scrolling: touch;
+    width: 240px;
+    margin: 0;
+    font-size: 14.72px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Enable momentum scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+}
+
+#toc ul {
+  margin: 0px;
+  padding: 0px;
 }
 
 #toc > ul > li> a, #toc > ul > li> a:link, #toc > ul > li> a:visited {
@@ -46,17 +51,3 @@
 #toc > ul > li > a .codenumber + .title {
     margin-left: 2em;
 }
-
-/*#toc ul li:first-child {
-   margin-top: 0;
-}
-
-#toc ul li a, #toc ul li a:link, #toc ul li a:visited {
-    color: #ffffff;
-    background: #3572a0;
-  }
-
-#toc ul li ul li a, #toc ul li a ul li a:link, #toc ul li ul li a:visited {
-    color: #671d12;
-    background: #f0f0f0;
-  }*/
