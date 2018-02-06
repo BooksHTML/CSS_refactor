@@ -14,6 +14,28 @@
   padding: 0px;
 }
 
+#toc ul li ul li:last-child a {
+  border-bottom: none;
+}
+
+#toc ul li ul li a:hover {
+    border-top: 1px solid #000000;
+    margin-top: -1px;
+}
+
+#toc ul li ul li:last-child a:hover {
+  border-top: 1px solid #000000;
+  margin-top: -1px;
+}
+
+#toc ul li ul li:last-child {
+  margin-bottom: -0.3em;
+}
+
+#toc ul li ul li a {
+  border-top: none;
+}
+
 #toc > ul > li> a, #toc > ul > li> a:link, #toc > ul > li> a:visited {
     font-weight: bold;
     color: #ffffff;

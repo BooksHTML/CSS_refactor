@@ -1581,18 +1581,18 @@ body.centered-container {
     /* Depressed state on click but not when marked active */
   }
   /* line 215, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_buttons.scss */
-  #toc ul li a:active:active, #toc ul li a:active.active {
+  #tocx ul li a:active:active, #toc ul li a:active.active {
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
     -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
     box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
   }
 }
 /* line 151, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-#toc ul li a {
+#tocx ul li a {
   border-top: none;
 }
 /* line 155, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-#toc ul li a:hover {
+#tocx ul li a:hover {
   /* Cover the previous items border-bottom with our top */
   margin-top: -1px;
   border-top: 1px solid #3c110a;
