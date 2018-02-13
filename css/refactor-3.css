@@ -1358,11 +1358,11 @@ body.centered-container {
 
 /* The table-of-contents itself */
 /* line 107, ../../../../../MathBook/mathbook-assets/scss/ui/partials/_layout.scss */
-#toc {
+#tof {
   /*@import "../ui-config";*/
 }
 /* line 30, ../../../../../MathBook/mathbook-assets/scss/ui/partials/_toc.scss */
-#tocx {
+#tofx {
   /* IMPORTANT height must be calculated by javascript. */
   width: 240px;
   margin: 0;
@@ -1373,7 +1373,7 @@ body.centered-container {
   -webkit-overflow-scrolling: touch;
 }
 /* line 46, ../../../../../MathBook/mathbook-assets/scss/ui/partials/_toc.scss */
-#tocx h2 {
+#tofx h2 {
   display: block;
   font-family: "PT Serif", "Times New Roman", Times, serif;
   font-weight: 700;
@@ -1382,7 +1382,7 @@ body.centered-container {
   margin: 0;
 }
 /* line 98, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-#tocx h2 a {
+#tofx h2 a {
   position: relative;
   display: block;
   font-size: 14.72px;
@@ -1393,38 +1393,38 @@ body.centered-container {
   border-left: none;
 }
 /* line 113, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-#tocx h2 a, #tocx h2 a:link, #tocx h2 a:visited, #tocx h2 a:hover, #tocx h2 a:active {
+#tofx h2 a, #tofx h2 a:link, #tofx h2 a:visited, #tofx h2 a:hover, #tofx h2 a:active {
   text-decoration: none;
 }
 /* line 117, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-#tocx h2 a, #tocx h2 a:link, #tocx h2 a:visited {
+#tofx h2 a, #tofx h2 a:link, #tofx h2 a:visited {
   color: white;
   background: #3572a0;
 }
 /* line 128, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-#tocx h2 a.active, #tocx h2 a:active {
+#tofx h2 a.active, #tofx h2 a:active {
   color: white;
   background: #932919;
 }
 /* line 133, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-#tocx h2 a:hover {
+#tofx h2 a:hover {
   color: white;
   background: #671d12;
   border-color: #3c110a;
 }
 /* line 139, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-#tocx h2 a:active {
+#tofx h2 a:active {
   /* Depressed state on click but not when marked active */
 }
 /* line 215, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_buttons.scss */
-#tocx h2 a:active:active, #tocx h2 a:active.active {
+#tofx h2 a:active:active, #tofx h2 a:active.active {
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
 }
 @media screen and (max-width: 800px) {
   /* line 98, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-  #tocx h2 a {
+  #tofx h2 a {
     position: relative;
     display: block;
     font-size: 14.72px;
@@ -1435,38 +1435,38 @@ body.centered-container {
     border-left: none;
   }
   /* line 113, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-  #tocx h2 a, #tocx h2 a:link, #tocx h2 a:visited, #tocx h2 a:hover, #tocx h2 a:active {
+  #tofx h2 a, #tofx h2 a:link, #tofx h2 a:visited, #tofx h2 a:hover, #tofx h2 a:active {
     text-decoration: none;
   }
   /* line 117, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-  #tocx h2 a, #tocx h2 a:link, #tocx h2 a:visited {
+  #tofx h2 a, #tofx h2 a:link, #tofx h2 a:visited {
     color: white;
     background: #3572a0;
   }
   /* line 128, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-  #tocx h2 a.active, #tocx h2 a:active {
+  #tofx h2 a.active, #tofx h2 a:active {
     color: white;
     background: #932919;
   }
   /* line 133, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-  #tocx h2 a:hover {
+  #tofx h2 a:hover {
     color: white;
     background: #671d12;
     border-color: #3c110a;
   }
   /* line 139, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-  #tocx h2 a:active {
+  #tofx h2 a:active {
     /* Depressed state on click but not when marked active */
   }
   /* line 215, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_buttons.scss */
-  #tocx h2 a:active:active, #tocx h2 a:active.active {
+  #tofx h2 a:active:active, #tofx h2 a:active.active {
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
     -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
     box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
   }
 }
 /* line 101, ../../../../../MathBook/mathbook-assets/scss/ui/partials/_toc.scss */
-#toc .codenumber + .title {
+#tofx .codenumber + .title {
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: baseline;
@@ -1484,7 +1484,7 @@ body.centered-container {
 }
 @media screen and (max-width: 800px) {
   /* line 105, ../../../../../MathBook/mathbook-assets/scss/ui/partials/_toc.scss */
-  #tox .codenumber {
+  #tof .codenumber {
     position: absolute;
     right: 100%;
     margin-right: -23.876px;
@@ -1492,61 +1492,61 @@ body.centered-container {
   }
 }
 /* line 113, ../../../../../MathBook/mathbook-assets/scss/ui/partials/_toc.scss */
-#tocx ul {
+#tofx ul {
   margin: 0px;
   padding: 0px;
   list-style-type: none;
 }
 /* line 118, ../../../../../MathBook/mathbook-assets/scss/ui/partials/_toc.scss */
-#toc ul li {
+#tofx ul li {
   display: block;
   margin: 0px;
   padding: 0px;
 }
 /* line 98, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-#toc ul li a {
+#tofx ul li a {
   position: relative;
   display: block;
   font-size: 14.72px;
   padding: 2.86957px;
   padding-left: 25.872px;
   border: 1px solid #d1d1d1;
-  border-right: none;
   border-left: none;
+  border-right: none;
 }
 /* line 113, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-#toc ul li a, #toc ul li a:link, #toc ul li a:visited, #toc ul li a:hover, #toc ul li a:active {
+#tofx ul li a, #tofx ul li a:link, #tofx ul li a:visited, #tofx ul li a:hover, #tofx ul li a:active {
   text-decoration: none;
 }
 /* line 117, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-#toc ul li a, #toc ul li a:link, #toc ul li a:visited {
+#tofx ul li a, #tofx ul li a:link, #tofx ul li a:visited {
   color: #671d12;
   background: #f0f0f0;
 }
 /* line 128, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-#toc ul li a.active, #toc ul li a:active {
+#tofx ul li a.active, #tofx ul li a:active {
   color: white;
   background: #932919;
 }
 /* line 133, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-#toc ul li a:hover {
+#tofx ul li a:hover {
   color: white;
   background: #671d12;
   border-color: #3c110a;
 }
 /* line 139, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-#toc ul li a:active {
+#tofx ul li a:active {
   /* Depressed state on click but not when marked active */
 }
 /* line 215, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_buttons.scss */
-#toc ul li a:active:active, #toc ul li a:active.active {
+#tox ul li a:active:active, #tox ul li a:active.active {
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
 }
 @media screen and (max-width: 800px) {
   /* line 98, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-  #toc ul li a {
+  #tof ul li a {
     position: relative;
     display: block;
     font-size: 14.72px;
@@ -1557,52 +1557,52 @@ body.centered-container {
     border-left: none;
   }
   /* line 113, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-  #toc ul li a, #toc ul li a:link, #toc ul li a:visited, #toc ul li a:hover, #toc ul li a:active {
+  #tof ul li a, #tof ul li a:link, #tof ul li a:visited, #tof ul li a:hover, #tof ul li a:active {
     text-decoration: none;
   }
   /* line 117, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-  #toc ul li a, #toc ul li a:link, #toc ul li a:visited {
+  #tof ul li a, #tof ul li a:link, #tof ul li a:visited {
     color: #671d12;
     background: #f0f0f0;
   }
   /* line 128, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-  #toc ul li a.active, #toc ul li a:active {
+  #tof ul li a.active, #tof ul li a:active {
     color: white;
     background: #932919;
   }
   /* line 133, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-  #toc ul li a:hover {
+  #tof ul li a:hover {
     color: white;
     background: #671d12;
     border-color: #3c110a;
   }
   /* line 139, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-  #toc ul li a:active {
+  #tof ul li a:active {
     /* Depressed state on click but not when marked active */
   }
   /* line 215, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_buttons.scss */
-  #tocx ul li a:active:active, #toc ul li a:active.active {
+  #tof ul li a:active:active, #tof ul li a:active.active {
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
     -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
     box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
   }
 }
 /* line 151, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-#tocx ul li a {
+#tofx ul li a {
   border-top: none;
 }
 /* line 155, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-#tocx ul li a:hover {
+#tofx ul li a:hover {
   /* Cover the previous items border-bottom with our top */
   margin-top: -1px;
   border-top: 1px solid #3c110a;
 }
 /* line 180, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-#tocx ul li:last-child a {
+#tofx ul li:last-child a {
   border-bottom-color: transparent;
 }
 /* line 184, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-#tocx ul li:last-child a:hover {
+#tofx ul li:last-child a:hover {
   /* When we hover we want to show the last border */
   border-color: #3c110a;
 }

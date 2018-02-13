@@ -10,30 +10,57 @@
 }
 
 #toc ul {
-  margin: 0px;
-  padding: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+#toc ul li a {
+    position: relative;
+    display: block;
+    padding: 2.86957px;
+    padding-left: 25.872px;
+    border-top: 1px solid #d1d1d1;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+/*Removes underlines from links in toc*/
+#toc ul li a, #toc ul li a:link, #toc ul li a:visited, #toc ul li a:hover, #toc ul li a:active {
+    text-decoration: none;
+}
+
+/*Sets subsection color scheme*/
+#toc ul li a, #toc ul li a:link, #toc ul li a:visited {
+    color: #671d12;
+    background: #f0f0f0;
+}
+
+/*Sets colors while hovering*/
+#toc ul li a:hover {
+    color: white;
+    background: #671d12;
+    border-color: #3c110a;
+}
+
+#toc .codenumber + .title {
+    display: inline-block;
+    /*Not sure if the rest of this is important or not*/
+    vertical-align: baseline;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    margin-left: 16.192px;
 }
 
 #toc ul li ul li:last-child a {
-  border-bottom: none;
-}
-
-#toc ul li ul li a:hover {
-    border-top: 1px solid #000000;
-    margin-top: -1px;
-}
-
-#toc ul li ul li:last-child a:hover {
-  border-top: 1px solid #000000;
-  margin-top: -1px;
+    border-bottom: none;
 }
 
 #toc ul li ul li:last-child {
-  margin-bottom: -0.3em;
+    margin-bottom: -0.3em;
 }
 
 #toc ul li ul li a {
-  border-top: none;
+    border-top: none;
 }
 
 #toc > ul > li> a, #toc > ul > li> a:link, #toc > ul > li> a:visited {
@@ -54,11 +81,16 @@
     border-color: #3c110a;
 }
 
+#toc ul li ul a:hover {
+    border-top: 1px solid #3c110a;
+    margin-top: -1px;
+}
+
 #toc > ul > li:not(:first-child) {
     margin-top: 0.3em;
 }
 
-#toc > ul > li:first-child .title {
+#toc > ul > li:first-child .title, #toc > ul > li:last-child .title {
     margin-left: 2em;
 }
 
