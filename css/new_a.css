@@ -18,7 +18,7 @@
     position: relative;
     display: block;
     padding: 2.86957px;
-    padding-left: 25.872px;
+    padding-left: 1.5em;
     border-top: 1px solid #d1d1d1;
     border-bottom: 1px solid #d1d1d1;
 }
@@ -39,16 +39,6 @@
     color: white;
     background: #671d12;
     border-color: #3c110a;
-}
-
-#toc .codenumber + .title {
-    display: inline-block;
-    /*Not sure if the rest of this is important or not*/
-    vertical-align: baseline;
-    *vertical-align: auto;
-    zoom: 1;
-    *display: inline;
-    margin-left: 16.192px;
 }
 
 #toc ul li ul li:last-child a {
@@ -97,11 +87,12 @@
 #toc > ul > li > a .codenumber {
     position: absolute;
     margin-right: 0;
-    margin-left: 0.5em;
+    margin-left: 0em;
     left: 0.3em;
     display: inline-block;
 }
 
 #toc > ul > li > a .codenumber + .title {
-    margin-left: 2em;
+    margin-left: 1.3em;
+    display: inline-block;
 }
