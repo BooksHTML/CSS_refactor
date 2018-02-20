@@ -1358,7 +1358,7 @@ body.centered-container {
 
 /* The table-of-contents itself */
 /* line 107, ../../../../../MathBook/mathbook-assets/scss/ui/partials/_layout.scss */
-#toc {
+#tocx {
   /*@import "../ui-config";*/
 }
 /* line 30, ../../../../../MathBook/mathbook-assets/scss/ui/partials/_toc.scss */
@@ -1484,7 +1484,7 @@ body.centered-container {
 }
 @media screen and (max-width: 800px) {
   /* line 105, ../../../../../MathBook/mathbook-assets/scss/ui/partials/_toc.scss */
-  #toc .codenumber {
+  #tocx .codenumber {
     position: absolute;
     right: 100%;
     margin-right: -23.876px;
@@ -1539,14 +1539,14 @@ body.centered-container {
   /* Depressed state on click but not when marked active */
 }
 /* line 215, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_buttons.scss */
-#tox ul li a:active:active, #tox ul li a:active.active {
+#tocx ul li a:active:active, #tocx ul li a:active.active {
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
 }
 @media screen and (max-width: 800px) {
   /* line 98, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-  #toc ul li a {
+  #tocx ul li a {
     position: relative;
     display: block;
     font-size: 14.72px;
@@ -1557,31 +1557,31 @@ body.centered-container {
     border-left: none;
   }
   /* line 113, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-  #toc ul li a, #toc ul li a:link, #toc ul li a:visited, #toc ul li a:hover, #toc ul li a:active {
+  #tocx ul li a, #tocx ul li a:link, #tocx ul li a:visited, #tocx ul li a:hover, #tocx ul li a:active {
     text-decoration: none;
   }
   /* line 117, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-  #toc ul li a, #toc ul li a:link, #toc ul li a:visited {
+  #tocx ul li a, #tocx ul li a:link, #tocx ul li a:visited {
     color: #671d12;
     background: #f0f0f0;
   }
   /* line 128, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-  #toc ul li a.active, #toc ul li a:active {
+  #tocx ul li a.active, #tocx ul li a:active {
     color: white;
     background: #932919;
   }
   /* line 133, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-  #toc ul li a:hover {
+  #tocx ul li a:hover {
     color: white;
     background: #671d12;
     border-color: #3c110a;
   }
   /* line 139, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_navtree.scss */
-  #toc ul li a:active {
+  #tocx ul li a:active {
     /* Depressed state on click but not when marked active */
   }
   /* line 215, ../../../../../MathBook/mathbook-assets/scss/ui/mixins/_buttons.scss */
-  #toc ul li a:active:active, #toc ul li a:active.active {
+  #tocx ul li a:active:active, #tocx ul li a:active.active {
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
     -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
     box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;

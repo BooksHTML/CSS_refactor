@@ -5,55 +5,60 @@
     font-size: 14.72px;
     overflow-y: auto;
     overflow-x: hidden;
-    /* Enable momentum scrolling on iOS */
-    -webkit-overflow-scrolling: touch;
 }
 
+/* Aligns toc to the top and side of the allotted space, respectively */
 #toc ul {
     margin: 0px;
     padding: 0px;
+}
+
+/* Places section titles */
+#toc .title {
+    margin-left: 1.4em;
+    display: inline-block;
+}
+
+
+/* Places codenumbers */
+#toc .codenumber {
+    position: absolute;
+    margin-right: 0;
+    margin-left: 0em;
+    margin-top: 0.4px;
+    left: 0.3em;
+    display: inline-block;
 }
 
 #toc ul li a {
     position: relative;
     display: block;
     padding: 2.86957px;
-    padding-left: 1.5em;
+    padding-left: 1.6em;
     border-top: 1px solid #d1d1d1;
     border-bottom: 1px solid #d1d1d1;
 }
 
-/*Removes underlines from links in toc*/
+/* Sets spacing between section headings*/
+#toc > ul > li:not(:first-child) {
+    margin-top: 0.3em;
+}
+
+/* Removes underlines from links in toc */
 #toc ul li a, #toc ul li a:link, #toc ul li a:visited, #toc ul li a:hover, #toc ul li a:active {
     text-decoration: none;
 }
 
-/*Sets subsection color scheme*/
+/* Begin defining colors: */
+
+/* Sets subsection color scheme */
 #toc ul li a, #toc ul li a:link, #toc ul li a:visited {
     color: #671d12;
     background: #f0f0f0;
 }
 
-/*Sets colors while hovering*/
-#toc ul li a:hover {
-    color: white;
-    background: #671d12;
-    border-color: #3c110a;
-}
-
-#toc ul li ul li:last-child a {
-    border-bottom: none;
-}
-
-#toc ul li ul li:last-child {
-    margin-bottom: -0.3em;
-}
-
-#toc ul li ul li a {
-    border-top: none;
-}
-
-#toc > ul > li> a, #toc > ul > li> a:link, #toc > ul > li> a:visited {
+/* Sets section-header color scheme. Also styles/places them correctly. */
+#toc > ul > li > a, #toc > ul > li > a:link, #toc > ul > li > a:visited {
     font-weight: bold;
     color: #ffffff;
     background: #3572a0;
@@ -62,37 +67,42 @@
     padding-left: 0.2em;
 }
 
+/* Sets colors of the active section. Also sets its depressed state. */
 #toc ul li a.active {
     background: #932919
 }
 
+/* Sets colors while hovering */
 #toc ul li a:hover {
+    color: #ffffff;
     background: #671d12;
     border-color: #3c110a;
 }
 
+/* End defining colors */
+
+/* Ensures that there is no double border between subsections */
+#toc ul li ul a {
+    border-top: none;
+}
+
+/* Allows both "top" and bottom border of a subsection to be highlighted on hover */
 #toc ul li ul a:hover {
     border-top: 1px solid #3c110a;
     margin-top: -1px;
 }
 
-#toc > ul > li:not(:first-child) {
-    margin-top: 0.3em;
+/* Removes the excess space between the last subsection and the next section (caused by
+the margin on top of sections being used to space out adjacent sections) */
+#toc ul li ul li:last-child {
+    margin-bottom: -0.3em;
 }
 
-#toc > ul > li:first-child .title, #toc > ul > li:last-child .title {
-    margin-left: 2em;
+/* Removes double border between last subsection and next section */
+#toc ul li ul li:last-child a {
+    border-bottom: none;
 }
 
-#toc > ul > li > a .codenumber {
-    position: absolute;
-    margin-right: 0;
-    margin-left: 0em;
-    left: 0.3em;
-    display: inline-block;
-}
-
-#toc > ul > li > a .codenumber + .title {
-    margin-left: 1.3em;
-    display: inline-block;
+#toc ul li a:active {
+  box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
 }
