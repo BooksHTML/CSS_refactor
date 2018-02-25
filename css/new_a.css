@@ -49,37 +49,11 @@
     text-decoration: none;
 }
 
-/* Begin defining colors: */
-
-/* Sets subsection color scheme */
-#toc ul li a, #toc ul li a:link, #toc ul li a:visited {
-    color: #671d12;
-    background: #f0f0f0;
-}
-
-/* Sets section-header color scheme. Also styles/places them correctly. */
 #toc > ul > li > a, #toc > ul > li > a:link, #toc > ul > li > a:visited {
     font-weight: bold;
-    color: #ffffff;
-    background: #3572a0;
-    border-color: #30668e;
     font-family: "PT Serif", "Times New Roman", Times, serif;
     padding-left: 0.2em;
 }
-
-/* Sets colors of the active section. Also sets its depressed state. */
-#toc ul li a.active {
-    background: #932919
-}
-
-/* Sets colors while hovering */
-#toc ul li a:hover {
-    color: #ffffff;
-    background: #671d12;
-    border-color: #3c110a;
-}
-
-/* End defining colors */
 
 /* Ensures that there is no double border between subsections */
 #toc ul li ul a {
@@ -106,3 +80,33 @@ the margin on top of sections being used to space out adjacent sections) */
 #toc ul li a:active {
   box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px inset;
 }
+
+/* Begin defining colors: */
+
+/* Sets subsection color scheme */
+#toc ul li a, #toc ul li a:link, #toc ul li a:visited {
+    color: #671d12;
+    background: #f0f0f0;
+}
+
+/* Sets section-header color scheme. */
+#toc > ul > li > a, #toc > ul > li > a:link, #toc > ul > li > a:visited {
+    color: #ffffff;
+    background: #3572a0;
+    border-color: #30668e;
+}
+
+/* Sets colors of the active section. */
+#toc ul li a.active {
+    background: #932919;
+    color: #ffffff;
+}
+
+/* Sets colors while hovering */
+#toc ul li a:hover {
+    color: #ffffff;
+    background: #671d12;
+    border-color: #3c110a;
+}
+
+/* End defining colors */

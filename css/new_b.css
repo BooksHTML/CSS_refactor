@@ -1,4 +1,4 @@
-#toc > ul > li> a, #toc > ul > li> a:link, #toc > ul > li> a:visited {
+/*#toc > ul > li > a, #toc > ul > li > a:link, #toc > ul > li > a:visited {
     color: #505050;
     background: #dbf5ff;
     border-color: #afc2e5;
@@ -15,8 +15,8 @@
     border-color: #ec704b;
 }
 
-#toc ul li a.active, ul li ul a.active {
+#toc ul li a.active, #toc ul li ul a.active {
     color: #404040;
     background: #fae5b6;
     border-color: #d7b772;
-}
+}*/
