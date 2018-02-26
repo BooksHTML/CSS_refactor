@@ -1,0 +1,22 @@
+/*#toc > ul > li > a, #toc > ul > li > a:link, #toc > ul > li > a:visited {
+    color: #505050;
+    background: #dbf5ff;
+    border-color: #afc2e5;
+}
+
+#toc ul li ul a, #toc ul li ul a:link, #toc ul li ul a:visited {
+    color: #404040;
+    background: #ffffff;
+}
+
+#toc ul li a:hover, #toc ul li ul a:hover {
+    color: #321a0c;
+    background: #fac793;
+    border-color: #ec704b;
+}
+
+#toc ul li a.active, #toc ul li ul a.active {
+    color: #404040;
+    background: #fae5b6;
+    border-color: #d7b772;
+}*/
